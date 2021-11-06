@@ -85,4 +85,45 @@ Android Studio. Vue en XML, Descriptif de l'application dans `AndroidManifest.xm
 
 ### Layout
 
-Permet de définir les emplacement des éléments sur l'écran. Il existe différentes stratégies, comme du positionnement relatif (RelativeLayout ou ContraintLayout), Les un après les autre (LinearLayout), ou comme un tableau (TableLayout). Il existe une structure de layout permettant de les combinée et et les impriquer. 
+Permet de définir les emplacement des éléments sur l'écran. Il existe différentes stratégies, comme du positionnement relatif (RelativeLayout ou ContraintLayout), Les un après les autre (LinearLayout), ou comme un tableau (TableLayout). Il existe une structure de layout permettant de les combinée et et les imbriquer. Il est possible de créer son propre Layout personnalisé.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" <!-- vue placé dans LineraLayout -->
+              android:layout_width="match_parent" <!-- utilise tout l'espace -->
+              android:layout_height="match_parent" <!-- utilise tout l'espace -->
+              android:orientation="vertical" 
+			  android:padding="10dp" > <!--px : pixel, pas dynmamique; in(inch) mm : valeur physique; pt 1/72 in; dp : density independant pixels : 1 dp is 1px sur 160dpi; sp scale-independant pixels -->
+    <TextView android:id="@+id/text" <!-- identifiant concerné, permet link -->
+              android:layout_width="wrap_content" <!-- warp_content : constant -->
+              android:layout_height="wrap_content"
+              android:text="Hello, I am a TextView" />
+    <Button android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, I am a Button" />
+</LinearLayout>
+```
+
+Pour appliquer un layout, il faut `setContentView(R.layout.nomdufichiersansxml)` dans une activité
+
+`findViewById(R.id.text)` permet de link le titre avec l'activité
+
+Ensuite, on peut mettre en place des listener sur les objet linké pour traiter les interractions.
+
+### Android JetPack
+
+Se documenter sur web, cours pas explicite par lui seul
+
+### Programmer en android
+
+Grand principe mobilité : Ce qui n'est pas une interaction direct et immédiate doit être délégué à un autre thread.
+
+Possibilité qu'une migration vers des thin client soit mise en place -> besoin de beaucoup de communication, il est possible que cette migration n'ait lieu que pour de la consultation
+
+
+
+
+
+
+
