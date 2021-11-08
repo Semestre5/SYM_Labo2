@@ -119,9 +119,63 @@ Se documenter sur web, cours pas explicite par lui seul
 
 Grand principe mobilité : Ce qui n'est pas une interaction direct et immédiate doit être délégué à un autre thread.
 
+### Application native
+
 Possibilité qu'une migration vers des thin client soit mise en place -> besoin de beaucoup de communication, il est possible que cette migration n'ait lieu que pour de la consultation
 
+Slide 69-70 pas compris
 
+Il existe des applications basée sur web packagées sous la forme d'app. (Ionic(angular ou React), Adoble PhoneGap)
+
+Ou même qui génère du code Android/iOS du même code (React Native, Xamarin, Unity3D, Goo)
+
+Parfois basé sur une VM, comme React.
+
+Que choisir ? Natif pour application complexe, et cross-plateforme pour des application "simple"
+
+React est très mis à jour, et open source. Flutter, très documenté et facile.
+
+## Communication
+
+**Relation de Shannon**
+$$
+C = W * log{_2}{(1 + \frac{S}{N})}
+$$
+Cette formule montre la limite des ondes sur le réseau. On ne peut pas exploiter sans limite le milieu air.
+
+4 caractéristiques des antenne émettrice et réceptrices : le gain (endroit), le milieu (contexte), distance et puissance. 
+
+2 types d'antenne : omnidirectionnelle et parabolique
+
+La puissance de réception diminue proportionnellement au carré avec la distance et la fréquence, indépendamment.
+
+### GSM / Wireless Application Protocol (2G)
+
+Différents protocoles
+
+HTTP passe à WAE, fournit une architecture pour la communication entre les appareils sans fil et les serveurs Web. De plus, on utilise WTP (Wireless transaction protocole). Ce protocole gère les types de connexion et la fiabilité du service. Cette couche se situe au niveau applicatif.
+
+WML est un langage à balises conçu spécifiquement pour le WAP (Wireless access point), de manière à pouvoir s'afficher sur un écran de téléphone mobile.
+
+### UMTS / Universal Mobile Telecommuniation System (3G)
+
+Meilleur débit, technologie à étalement de spectre, affectée à chaque cellule radio **est** de 5 MHz avec une largeur spectrale réelle de 4,685 MHz .
+
+- Duplex temporel [TDD](https://fr.wikipedia.org/wiki/TDD_(télécommunications)) : 1 885,00 à 1 920,00 MHz (bande de 35 MHz de largeur) et 2 010,00 à 2 025,00 MHz (bande de 15 MHz) ;
+- Duplex fréquentiel [FDD](https://fr.wikipedia.org/wiki/FDD_(télécommunications)) : 1 920,00 à 1 980,00 MHz (*uplink* de 60 MHz) et 2 110,00 à 2 170,00 MHz (*downlink* de 60 MHz) ;
+- Bandes satellites : 1 980,00 à 2 010,00 MHz (uplink de 30 MHz) et 2 170,00 à 2 200,00 MHz (*downlink* de 30 MHz).
+
+Ces valeurs peuvent changer en fonction du pays
+
+Amélioration possible du début avec HSDPA
+
+### LTE / Long Term Evolution
+
+Extension de la 3g. Ceci n'est pas la 4g. 150 Mps théorique. Les débit en dessus de 1 MPs sont souvent bloqué par les lieu donc on en met beaucoup. Fréquence entre 800 MHZ  (LTE) et 3.8 GHz (LTE Advanced). On récupère un bout des fréquence de GSM (2G) Différents dans certains pays.
+
+Flemme milieu air à partir de page 29
+
+## Communication internet
 
 
 
