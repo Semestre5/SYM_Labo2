@@ -1,4 +1,4 @@
-package ch.heigvd.sym.labo2
+package ch.heigvd.sym.myapplication
 
 interface CommunicationEventListener {
     fun handleServerResponse(response :String)
