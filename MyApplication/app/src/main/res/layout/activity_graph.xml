@@ -2,8 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="false"
+    android:clipToPadding="false"
     tools:context=".GraphActivity">
+
+    <TextView
+        android:id="@+id/textViewAuthor"
+        android:layout_width="345dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="36dp"
+        android:text="Select an author:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerAuthor"
+        android:layout_width="344dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="71dp"
+        android:clickable="true"
+        android:clipToPadding="true"
+        android:dropDownWidth="wrap_content"
+        android:dropDownSelector="@color/black"
+        android:padding="2dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
