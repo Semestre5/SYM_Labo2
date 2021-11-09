@@ -20,6 +20,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewBooks"
+        android:layout_width="345dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="168dp"
+        android:text="Book(s):"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Spinner
         android:id="@+id/spinnerAuthor"
         android:layout_width="344dp"
@@ -37,5 +48,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
+    <ListView
+        android:id="@+id/listViewBooks"
+        android:layout_width="344dp"
+        android:layout_height="447dp"
+        android:layout_marginStart="40dp"
+        android:scrollbars="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBooks" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
