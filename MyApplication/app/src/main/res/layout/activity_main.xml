@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button_async"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Asyncrone" />
+        android:text="@string/asyncrone" />
 
     <Button
         android:id="@+id/button_diff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Différée" />
+        android:text="différée" />
 
     <Button
         android:id="@+id/button_serialization"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sérialisation" />
+        android:text="sérialisation" />
 
     <Button
         android:id="@+id/button_compressed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compressée" />
+        android:text="compressée" />
 
     <Button
         android:id="@+id/button_graphql"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GraphQL" />
+        android:text="@string/graphql" />
 </LinearLayout>
