@@ -14,4 +14,6 @@
     <string name="s_rialisation">Sérialisation</string>
     <string name="compress_e">Compressée</string>
     <string name="graphql">GraphQL</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="entrez_votre_texte">Entrez votre texte</string>
 </resources>
