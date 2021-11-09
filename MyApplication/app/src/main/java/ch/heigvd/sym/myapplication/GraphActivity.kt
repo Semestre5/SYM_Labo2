@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import org.json.JSONObject
 import java.net.CacheResponse
 
 class GraphActivity : CommunicationEventListener, AppCompatActivity() {
@@ -20,17 +21,29 @@ class GraphActivity : CommunicationEventListener, AppCompatActivity() {
         adapterAuthor = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listAuthors)
         authors.adapter = adapterAuthor
 
-        val sm = SymComManager(this)S
+        val symComManager = SymComManager(this)
+        symComManager.sendRequest("http://mobile.iict.ch/graphql", "{\"query\":\"{findAllAuthors{id, name}}\"}")
 
     }
 
     override fun handleServerResponse(response: String) {
-
+        val reader = JSONObject(response)
+        val data = reader.getJSONObject("data")
+        val authors = data.getJSONArray("findAllAuthors")
+        for (i in 0 until authors.length()) {
+            val author = authors.getJSONObject(i)
+            val a = Author(
+                author.getInt("id"),
+                author.getString("name")
+            )
+            listAuthors.add(a)
+        }
+        adapterAuthor.notifyDataSetChanged()
     }
 }
 
-data class Author(val id: Int, val first_name: String, val last_name: String) {
+data class Author(val id: Int, val name: String) {
     override fun toString(): String {
-        return this.first_name + " " + this.last_name
+        return this.name
     }
 }
