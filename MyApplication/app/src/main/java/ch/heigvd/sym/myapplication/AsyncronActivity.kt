@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ch.heigvd.sym.myapplication.databinding.ActivityAsyncronBinding
+import java.util.*
 
 class AsyncronActivity : CommunicationEventListener, AppCompatActivity() {
     private lateinit var binding: ActivityAsyncronBinding
@@ -12,7 +13,6 @@ class AsyncronActivity : CommunicationEventListener, AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAsyncronBinding.inflate(layoutInflater)
         setContentView(binding.root);
-
         val symComManager = SymComManager(this)
 
         binding.sendButton.setOnClickListener {
