@@ -1,8 +1,9 @@
 package ch.heigvd.sym.myapplication
 
+import android.os.Looper
+import android.os.Handler
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.io.UTFDataFormatException
 import java.net.HttpURLConnection
 import java.net.URL
 import java.nio.charset.StandardCharsets
@@ -30,7 +31,12 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
                         InputStreamReader(connection.inputStream)
                     )
                     val response: String = br.readText()
-                    communicationEventListener?.handleServerResponse(response)
+
+                    // Send the response in the main thread
+                    val mHandler = Handler(Looper.getMainLooper())
+                    val runnable = Runnable {communicationEventListener?.handleServerResponse(response)}
+                    mHandler.post( runnable )
+
                     br.close()
                 } catch (exception: Exception) {
                     exception.printStackTrace()
