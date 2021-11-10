@@ -1,9 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
     tools:context=".SerializationActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/input_firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/firstname"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/input_middle_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/middle_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/input_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/mail_address"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/input_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@android:string/emptyPhoneNumber"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/text_view_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_type" />
+
+    <RadioGroup
+        android:id="@+id/radio_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/radio_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/work"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/radio_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_view_serialization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/format_of_serialization" />
+
+    <RadioGroup
+        android:id="@+id/radio_ser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_xml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xml"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/radio_json"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/json"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/radio_protobuf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protobuf"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Send"/>
+
+    <TextView
+        android:id="@+id/text_view_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

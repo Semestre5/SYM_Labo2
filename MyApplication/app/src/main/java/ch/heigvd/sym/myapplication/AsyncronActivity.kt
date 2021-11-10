@@ -11,11 +11,11 @@ class AsyncronActivity : CommunicationEventListener, AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAsyncronBinding.inflate(layoutInflater)
+        this.binding = ActivityAsyncronBinding.inflate(layoutInflater)
         setContentView(binding.root);
         val symComManager = SymComManager(this)
 
-        binding.sendButton.setOnClickListener {
+        this.binding.sendButton.setOnClickListener {
             symComManager.sendRequest("http://mobile.iict.ch/api/txt", binding.userInput.text.toString())
         }
     }
