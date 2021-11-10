@@ -3,14 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1890625" />
+        <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1890625" />
         <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/layout/activity_asyncron.xml" value="0.22" />
         <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/layout/activity_defered.xml" value="0.22" />
         <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/layout/activity_graph.xml" value="0.15" />
         <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/layout/activity_serialization.xml" value="0.12" />
         <entry key="..\:/Users/axelv/projets/Semestre5/SYM/SYM_Labo2/MyApplication/app/src/main/res/layout/main_activity.xml" value="0.3046875" />
-        <entry key="app/src/main/res/layout/activity_asyncron.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/activity_graph.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -23,11 +23,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-<<<<<<< HEAD
         <option name="scale" value="0.12" />
-=======
-        <option name="scale" value="0.2" />
->>>>>>> d0c2ce96c67bee7e50e7f2e7bf123c50da6f5c6e
       </ProjectState>
     </option>
   </component>

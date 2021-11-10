@@ -2,7 +2,6 @@ package ch.heigvd.sym.myapplication
 
 import com.google.gson.Gson
 import org.xmlpull.v1.XmlPullParser
-import org.xmlpull.v1.XmlPullParserException
 import org.xmlpull.v1.XmlPullParserFactory
 
 class Parser {
@@ -19,40 +18,38 @@ class Parser {
         while (parser.next() != XmlPullParser.END_DOCUMENT) {
             when (parser.eventType) {
                 XmlPullParser.START_TAG -> when (parser.name) {
-                    "person" -> directory.addPerson(deserializePerson(parser))
+                    "person" -> directory.addPerson(deserializePersonAndPhones(parser))
                 }
             }
         }
         return directory;
     }
 
-    private fun deserializePerson(xmlPullParser: XmlPullParser): Person? {
+    private fun deserializePersonAndPhones(xmlPullParser: XmlPullParser): Person? {
         var name: String = ""
         var middlename: String? = ""
-        var mail: String = ""
         var firstname: String = ""
         var phone: String = ""
         var phoneType: String = ""
         var text: String = ""
+        var phones = emptyList<Phone>().toMutableList()
         while (xmlPullParser.next() != XmlPullParser.END_DOCUMENT) {
-            when (xmlPullParser.getEventType()) {
-                XmlPullParser.START_TAG -> if (xmlPullParser.name == "phone"){
-                    phoneType = xmlPullParser.getAttributeValue(null, "type");
-                }
+            when (xmlPullParser.eventType) {
+                XmlPullParser.START_TAG ->
+                    if (xmlPullParser.name == "phone"){
+                        phoneType = xmlPullParser.getAttributeValue(null, "type");
+                    }
                 XmlPullParser.TEXT -> text = xmlPullParser.text
                 XmlPullParser.END_TAG ->
                     when (xmlPullParser.name) {
                         "name" -> name = text
                         "firstname" -> firstname = text
                         "middlename" -> middlename = text
-                        "phone" -> phone = text
-                        "mail" -> mail = text
+                        "phone" -> phones.add(Phone(text, phoneType))
                         "person" -> return Person(
                             name,
                             firstname,
-                            mail,
-                            phone,
-                            phoneType,
+                            listOf(Phone(phone, phoneType)) as MutableList<Phone>,
                             middlename
                     )
                 }

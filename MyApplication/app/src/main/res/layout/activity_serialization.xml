@@ -40,16 +40,6 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/input_mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/mail_address"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:autofillHints="" />
-
-    <EditText
         android:id="@+id/input_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,7 +66,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/radio_work"
@@ -110,7 +101,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/xml"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/radio_json"
