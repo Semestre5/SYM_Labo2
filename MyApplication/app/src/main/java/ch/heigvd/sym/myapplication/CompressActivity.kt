@@ -2,6 +2,7 @@ package ch.heigvd.sym.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import ch.heigvd.sym.myapplication.databinding.ActivityCompressBinding
 
 class CompressActivity : CommunicationEventListener, AppCompatActivity() {
@@ -14,6 +15,7 @@ class CompressActivity : CommunicationEventListener, AppCompatActivity() {
         val symComManager = SymComManager(this)
 
         binding.sendButton.setOnClickListener {
+            Log.d("input", binding.userInput.text.toString())
             symComManager.sendRequest("http://mobile.iict.ch/api/txt", binding.userInput.text.toString(), compressed = true)
         }
     }
