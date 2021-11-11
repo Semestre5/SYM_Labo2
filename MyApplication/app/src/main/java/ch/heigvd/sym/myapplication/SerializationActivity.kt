@@ -53,7 +53,7 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
             binding.radioProtobuf.id ->
                 binding.textViewAnswer.text = Directory.deserializeProtoBuf(response).toString()
             binding.radioJson.id ->
-                binding.textViewAnswer.text = Directory.deserializeJSON(response).toString()
+                binding.textViewAnswer.text = Person.deserializeJSON(response).toString()
         }
     }
 }
