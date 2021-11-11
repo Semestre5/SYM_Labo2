@@ -10,17 +10,16 @@ import java.nio.charset.StandardCharsets
 import kotlin.concurrent.thread
 
 class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
-    fun sendRequest(url: String, request: String, content_type: String = "text/plain") {
+    fun sendRequest(url: String, request: ByteArray, content_type: String = "text/plain") {
             thread() {
                 val connection = URL(url).openConnection() as HttpURLConnection
-                val requestSerialized: ByteArray = request.toByteArray(StandardCharsets.UTF_8);
                 connection.requestMethod = "POST";
                 connection.setRequestProperty("Content-Type", content_type);
                 // connection.setRequestProperty("Accept-Charset", "UTF-8");
                 connection.doOutput = true;
 
                 try {
-                    connection.outputStream.write(requestSerialized);
+                    connection.outputStream.write(request);
                     connection.outputStream.close();
                 } catch (exception: Exception) {
                     exception.printStackTrace()

@@ -12,6 +12,9 @@ data class Person(
     var middle_name: String? = null
 ) {
 
+    /**
+     * Serialize Person as protocol Buffer
+     */
     fun serializeProtoBuf(): DirectoryOuterClass.Person? {
         val person = DirectoryOuterClass.Person.newBuilder()
             .setName(this.name)

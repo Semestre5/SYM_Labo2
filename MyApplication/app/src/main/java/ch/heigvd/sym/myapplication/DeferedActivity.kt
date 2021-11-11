@@ -7,11 +7,11 @@ import java.util.*
 
 class DeferedActivity : CommunicationEventListener, AppCompatActivity() {
     private lateinit var binding: ActivityDeferedBinding
-    private val queue: Queue<String> = LinkedList<String>()
+    private val queue: Queue<String> = LinkedList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDeferedBinding.inflate(layoutInflater)
-        setContentView(binding.root);
+        setContentView(binding.root)
 
         val symComManager = SymComManager(this)
         binding.sendButton.setOnClickListener {
@@ -22,17 +22,17 @@ class DeferedActivity : CommunicationEventListener, AppCompatActivity() {
             override fun run() {
                 while (true) {
                     for(item : String in queue){
-                        symComManager.sendRequest("http://mobile.iict.ch/api/txt", item)
+                        symComManager.sendRequest("http://mobile.iict.ch/api/txt", item.toByteArray())
                     }
-                    Thread.sleep(10000)
+                    sleep(10000)
                 }
             }
         }.start()
 
     }
     override fun handleServerResponse(response: String) {
-        queue.remove(response);
+        queue.remove(response)
         val textOld : String = binding.textAnswer.text.toString()
-        binding.textAnswer.text = textOld + System.getProperty ("line.separator") + response;
+        binding.textAnswer.text = textOld + System.getProperty ("line.separator") + response
     }
 }

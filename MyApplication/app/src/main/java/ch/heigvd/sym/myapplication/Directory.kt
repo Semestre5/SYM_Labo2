@@ -12,7 +12,7 @@ class Directory (
             persons.add(person)
     }
 
-    fun serializeProtoBuf(): ByteArray? {
+    fun serializeProtoBuf(): ByteArray {
         val directory = DirectoryOuterClass.Directory.newBuilder()
         for (person in persons) {
             directory.addResults(person.serializeProtoBuf())
@@ -52,7 +52,7 @@ class Directory (
                 xmlSerializer.text(phone.phone)
                 xmlSerializer.endTag("", "phone")
             }
-            //end tag <file>
+
             xmlSerializer.endTag("", "person")
         }
         xmlSerializer.endTag("", "directory")

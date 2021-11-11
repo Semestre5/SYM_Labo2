@@ -31,16 +31,16 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
             when(binding.radioSer.checkedRadioButtonId) {
                 binding.radioXml.id ->
                     symComManager.sendRequest("http://mobile.iict.ch/api/xml",
-                        directory.serializeXML(),
+                        directory.serializeXML().toByteArray(),
                         "application/xml")
                 binding.radioProtobuf.id ->
                     symComManager.sendRequest(
                         "http://mobile.iict.ch/api/protobuf",
-                        directory.serializeProtoBuf().toString(),
+                        directory.serializeProtoBuf(),
                         "application/protobuf")
                 binding.radioJson.id ->
                     symComManager.sendRequest("http://mobile.iict.ch/api/json",
-                        person.serializeJSON(),
+                        person.serializeJSON().toByteArray(),
                         "application/json")
             }
             //binding.textViewAnswer.text = Parser().deserializeXML(serialized).persons.toString()
@@ -48,6 +48,7 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
 
     }
     override fun handleServerResponse(response: String) {
+
         binding.textViewAnswer.text = response
         /*when(binding.radioSer.checkedRadioButtonId) {
             binding.radioXml.id -> Parser().deserializeXML(response).persons.toString()
@@ -55,5 +56,4 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
             binding.radioJson.id ->Parser().deserializeJSON(response).toString()
         }*/
     }
-
 }
