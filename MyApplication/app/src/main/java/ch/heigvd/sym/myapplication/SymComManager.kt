@@ -7,7 +7,6 @@ import java.io.InputStreamReader
 import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.URL
-import java.nio.charset.StandardCharsets
 import java.util.zip.Deflater
 import java.util.zip.DeflaterOutputStream
 import java.util.zip.Inflater
@@ -20,6 +19,7 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
                 val connection = URL(url).openConnection() as HttpURLConnection
                 connection.requestMethod = "POST"
                 connection.setRequestProperty("Content-Type", content_type)
+                // Add theses headers if it must be compressed
                 if (compressed) {
                     connection.setRequestProperty("X-Network", "CSD")
                     connection.setRequestProperty("X-Content-Encoding", "deflate")
@@ -28,6 +28,7 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
 
                 try {
                     val os: OutputStream
+                    // Configure in case it must be compressed or not
                     if (compressed) {
                         os = DeflaterOutputStream(connection.outputStream, Deflater(9, true))
                     } else {
@@ -41,6 +42,7 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
 
                 try {
                     val br = BufferedReader(
+                        // Check if the datas have been compressed or not
                         if (connection.headerFields["X-Content-Encoding"]?.isEmpty() == false) {
                             InputStreamReader(InflaterInputStream(connection.inputStream, Inflater(true)))
                         } else {
