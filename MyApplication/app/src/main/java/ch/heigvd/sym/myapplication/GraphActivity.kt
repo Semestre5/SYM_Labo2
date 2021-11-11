@@ -80,15 +80,3 @@ class GraphActivity : CommunicationEventListener, AppCompatActivity() {
 
 
 }
-
-data class Author(val id: Int, val name: String) {
-    override fun toString(): String {
-        return this.name
-    }
-}
-
-data class Book(val title: String) {
-    override fun toString(): String {
-        return this.title
-    }
-}
