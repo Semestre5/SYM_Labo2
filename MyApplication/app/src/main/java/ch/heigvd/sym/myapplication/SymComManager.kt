@@ -4,30 +4,50 @@ import android.os.Looper
 import android.os.Handler
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.URL
-import java.nio.charset.StandardCharsets
+import java.util.zip.Deflater
+import java.util.zip.DeflaterOutputStream
+import java.util.zip.Inflater
+import java.util.zip.InflaterInputStream
 import kotlin.concurrent.thread
 
 class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
-    fun sendRequest(url: String, request: ByteArray, content_type: String = "text/plain") {
-            thread() {
+    fun sendRequest(url: String, request: ByteArray, content_type: String = "text/plain", compressed: Boolean = false) {
+            thread {
                 val connection = URL(url).openConnection() as HttpURLConnection
-                connection.requestMethod = "POST";
-                connection.setRequestProperty("Content-Type", content_type);
-                // connection.setRequestProperty("Accept-Charset", "UTF-8");
-                connection.doOutput = true;
+                connection.requestMethod = "POST"
+                connection.setRequestProperty("Content-Type", content_type)
+                // Add theses headers if it must be compressed
+                if (compressed) {
+                    connection.setRequestProperty("X-Network", "CSD")
+                    connection.setRequestProperty("X-Content-Encoding", "deflate")
+                }
+                connection.doOutput = true
 
                 try {
-                    connection.outputStream.write(request);
-                    connection.outputStream.close();
+                    val os: OutputStream
+                    // Configure in case it must be compressed or not
+                    if (compressed) {
+                        os = DeflaterOutputStream(connection.outputStream, Deflater(9, true))
+                    } else {
+                        os = connection.outputStream
+                    }
+                    os.write(request)
+                    os.close()
                 } catch (exception: Exception) {
                     exception.printStackTrace()
                 }
 
                 try {
                     val br = BufferedReader(
-                        InputStreamReader(connection.inputStream)
+                        // Check if the datas have been compressed or not
+                        if (connection.headerFields["X-Content-Encoding"]?.isEmpty() == false) {
+                            InputStreamReader(InflaterInputStream(connection.inputStream, Inflater(true)))
+                        } else {
+                            InputStreamReader(connection.inputStream)
+                        }
                     )
                     val response: String = br.readText()
 
