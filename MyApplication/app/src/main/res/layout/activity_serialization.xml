@@ -7,7 +7,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    tools:context=".SerializationActivity">
+    tools:context=".activites.SerializationActivity">
 
     <EditText
         android:id="@+id/input_name"

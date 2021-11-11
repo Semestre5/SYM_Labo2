@@ -1,5 +1,6 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.model
 
+import ch.heigvd.sym.myapplication.DirectoryOuterClass
 import com.google.gson.Gson
 import org.xmlpull.v1.XmlPullParser
 

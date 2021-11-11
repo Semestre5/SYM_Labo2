@@ -1,4 +1,4 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Spinner
+import ch.heigvd.sym.myapplication.CommunicationEventListener
+import ch.heigvd.sym.myapplication.R
+import ch.heigvd.sym.myapplication.SymComManager
 import org.json.JSONObject
 
 class GraphActivity : CommunicationEventListener, AppCompatActivity() {

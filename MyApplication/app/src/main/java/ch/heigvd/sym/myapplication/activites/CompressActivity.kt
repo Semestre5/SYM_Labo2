@@ -1,8 +1,10 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import ch.heigvd.sym.myapplication.CommunicationEventListener
+import ch.heigvd.sym.myapplication.SymComManager
 import ch.heigvd.sym.myapplication.databinding.ActivityCompressBinding
 
 class CompressActivity : CommunicationEventListener, AppCompatActivity() {

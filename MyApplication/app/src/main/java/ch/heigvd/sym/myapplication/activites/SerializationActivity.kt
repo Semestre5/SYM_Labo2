@@ -1,8 +1,12 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ch.heigvd.sym.myapplication.*
 import ch.heigvd.sym.myapplication.databinding.ActivitySerializationBinding
+import ch.heigvd.sym.myapplication.model.Directory
+import ch.heigvd.sym.myapplication.model.Person
+import ch.heigvd.sym.myapplication.model.Phone
 
 class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
     private lateinit var binding: ActivitySerializationBinding

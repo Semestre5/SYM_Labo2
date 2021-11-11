@@ -11,19 +11,19 @@
         android:theme="@style/Theme.MyApplication"
         android:networkSecurityConfig="@xml/network_security_config">
         <activity
-            android:name=".GraphActivity"
+            android:name=".activites.GraphActivity"
             android:exported="true" />
         <activity
-            android:name=".SerializationActivity"
+            android:name=".activites.SerializationActivity"
             android:exported="true" />
         <activity
-            android:name=".DeferedActivity"
+            android:name=".activites.DeferedActivity"
             android:exported="true" />
         <activity
-            android:name=".AsyncronActivity"
+            android:name=".activites.AsyncronActivity"
             android:exported="true" />
         <activity
-            android:name=".CompressActivity"
+            android:name=".activites.CompressActivity"
             android:exported="true"
             android:label="@string/title_activity_compress"
             android:theme="@style/Theme.MyApplication.NoActionBar" />

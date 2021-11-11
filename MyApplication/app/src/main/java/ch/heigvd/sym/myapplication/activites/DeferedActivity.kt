@@ -1,7 +1,9 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ch.heigvd.sym.myapplication.CommunicationEventListener
+import ch.heigvd.sym.myapplication.SymComManager
 import ch.heigvd.sym.myapplication.databinding.ActivityDeferedBinding
 import java.util.*
 

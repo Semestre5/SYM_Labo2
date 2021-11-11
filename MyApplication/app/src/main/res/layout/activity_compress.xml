@@ -6,7 +6,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    tools:context=".CompressActivity" >
+    tools:context=".activites.CompressActivity" >
 
     <EditText
         android:id="@+id/user_input"

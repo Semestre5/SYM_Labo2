@@ -3,6 +3,7 @@ package ch.heigvd.sym.myapplication
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ch.heigvd.sym.myapplication.activites.*
 import ch.heigvd.sym.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

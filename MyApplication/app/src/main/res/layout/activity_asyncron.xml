@@ -6,7 +6,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    tools:context=".AsyncronActivity" >
+    tools:context=".activites.AsyncronActivity" >
 
     <EditText
         android:id="@+id/user_input"

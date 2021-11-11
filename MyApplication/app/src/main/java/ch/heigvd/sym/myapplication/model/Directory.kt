@@ -1,6 +1,7 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.model
 
 import android.util.Xml
+import ch.heigvd.sym.myapplication.DirectoryOuterClass
 import com.google.gson.Gson
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
@@ -10,11 +11,17 @@ import java.lang.StringBuilder
 class Directory (
     private var persons: MutableList<Person> = emptyList<Person>().toMutableList()
 ) {
+    /**
+     * Add a person to this directory of person
+     */
     fun addPerson(person: Person?){
         if (person != null)
             persons.add(person)
     }
 
+    /**
+     * Serialize this Directory as a Protocol Buffer
+     */
     fun serializeProtoBuf(): ByteArray {
         val directory = DirectoryOuterClass.Directory.newBuilder()
         for (person in persons) {
@@ -23,6 +30,9 @@ class Directory (
         return directory.build().toByteArray()
     }
 
+    /**
+     * Serialize this Directory in XML format
+     */
     fun serializeXML(): String {
         val xmlSerializer = Xml.newSerializer()
         val writer = StringWriter()

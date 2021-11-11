@@ -1,4 +1,6 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.model
+
+import ch.heigvd.sym.myapplication.DirectoryOuterClass
 
 data class Phone(
     var phone: String,
