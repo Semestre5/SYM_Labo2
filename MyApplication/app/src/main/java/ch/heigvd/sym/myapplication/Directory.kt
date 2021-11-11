@@ -1,6 +1,9 @@
 package ch.heigvd.sym.myapplication
 
 import android.util.Xml
+import com.google.gson.Gson
+import org.xmlpull.v1.XmlPullParser
+import org.xmlpull.v1.XmlPullParserFactory
 import java.io.StringWriter
 import java.lang.StringBuilder
 
@@ -68,5 +71,36 @@ class Directory (
             sb.append(person.toString())
         }
         return sb.toString()
+    }
+
+    companion object {
+        fun deserializeProtoBuf(response: String): Directory {
+            val directoryBuilder = DirectoryOuterClass.Directory.parseFrom(response.toByteArray())
+            val directory = Directory()
+            for (person in directoryBuilder.resultsList){
+                directory.addPerson(Person.deserializeProtoBuf(person))
+            }
+            return directory;
+        }
+
+        fun deserializeJSON(json : String) : Directory? {
+            return Gson().fromJson(json, Directory::class.java)
+        }
+
+        fun deserializeXML(xml : String) : Directory {
+            val directory = Directory()
+            val parserFactory = XmlPullParserFactory.newInstance()
+            val parser = parserFactory.newPullParser()
+            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false)
+            parser.setInput(xml.byteInputStream(), null)
+            while (parser.next() != XmlPullParser.END_DOCUMENT) {
+                when (parser.eventType) {
+                    XmlPullParser.START_TAG -> when (parser.name) {
+                        "person" -> directory.addPerson(Person.deserializePersonAndPhonesXML(parser))
+                    }
+                }
+            }
+            return directory;
+        }
     }
 }
