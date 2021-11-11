@@ -1,9 +1,6 @@
 package ch.heigvd.sym.myapplication
 
 import com.google.gson.Gson
-import android.util.Xml
-import java.io.StringWriter
-
 
 data class Person(
     var name: String,

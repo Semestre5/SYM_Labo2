@@ -48,12 +48,13 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
 
     }
     override fun handleServerResponse(response: String) {
-
-        binding.textViewAnswer.text = response
-        /*when(binding.radioSer.checkedRadioButtonId) {
-            binding.radioXml.id -> Parser().deserializeXML(response).persons.toString()
-            // binding.radioProtobuf.id -> Parser().deserialize(response).persons.toString()
-            binding.radioJson.id ->Parser().deserializeJSON(response).toString()
-        }*/
+        when(binding.radioSer.checkedRadioButtonId) {
+            binding.radioXml.id ->
+                binding.textViewAnswer.text = Parser().deserializeXML(response).toString()
+            binding.radioProtobuf.id ->
+                binding.textViewAnswer.text = Parser().deserializeProtoBuf(response).toString()
+            binding.radioJson.id ->
+                binding.textViewAnswer.text = Parser().deserializeJSON(response).toString()
+        }
     }
 }

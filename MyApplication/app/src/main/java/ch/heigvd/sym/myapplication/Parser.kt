@@ -49,13 +49,40 @@ class Parser {
                         "person" -> return Person(
                             name,
                             firstname,
-                            listOf(Phone(phone, phoneType)) as MutableList<Phone>,
+                            phones,
                             middlename
                     )
                 }
             }
         }
         return null;
+    }
+
+    fun deserializeProtoBuf(response: String): Directory {
+        val directoryBuilder = DirectoryOuterClass.Directory.parseFrom(response.toByteArray())
+        val directory = Directory()
+        for (person in directoryBuilder.resultsList){
+            directory.addPerson(deserializePersonProtoBuf(person))
+        }
+        return directory;
+    }
+
+    private fun deserializePersonProtoBuf(person : DirectoryOuterClass.Person) : Person {
+        val name = person.name
+        val firstname = person.firstname
+        var phones: MutableList<Phone> = emptyList<Phone>().toMutableList()
+        for (phone in person.phoneList){
+            phones.add(deserializePhoneProtoBuf(phone))
+        }
+        if (person.middlename != null && person.middlename != "") {
+            return Person( name, firstname, phones, person.middlename)
+        }
+        return Person(name, firstname, phones)
+
+    }
+
+    private fun deserializePhoneProtoBuf(phone : DirectoryOuterClass.Phone) : Phone {
+        return Phone(phone.number, Phone.getTypeFromBuilderType(phone.type))
     }
 
 

@@ -1,5 +1,6 @@
 package ch.heigvd.sym.myapplication
 
+
 data class Phone(
     var phone: String,
     var typephone: String,
@@ -13,5 +14,15 @@ data class Phone(
             "mobile" -> phoneBuildConfig.type = DirectoryOuterClass.Phone.Type.MOBILE
         }
         return phoneBuildConfig.build()
+    }
+    companion object {
+        fun getTypeFromBuilderType(builderType: DirectoryOuterClass.Phone.Type) : String {
+            return when(builderType){
+                DirectoryOuterClass.Phone.Type.HOME -> "home"
+                DirectoryOuterClass.Phone.Type.WORK -> "work"
+                DirectoryOuterClass.Phone.Type.MOBILE -> "mobile"
+                else -> "error"
+            }
+        }
     }
 }
