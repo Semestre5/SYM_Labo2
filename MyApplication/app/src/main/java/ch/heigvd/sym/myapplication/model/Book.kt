@@ -1,4 +1,4 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.model
 
 data class Book(val title: String) {
     override fun toString(): String {

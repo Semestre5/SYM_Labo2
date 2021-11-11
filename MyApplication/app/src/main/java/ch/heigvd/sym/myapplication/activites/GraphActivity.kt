@@ -10,6 +10,8 @@ import android.widget.Spinner
 import ch.heigvd.sym.myapplication.CommunicationEventListener
 import ch.heigvd.sym.myapplication.R
 import ch.heigvd.sym.myapplication.SymComManager
+import ch.heigvd.sym.myapplication.model.Author
+import ch.heigvd.sym.myapplication.model.Book
 import org.json.JSONObject
 
 class GraphActivity : CommunicationEventListener, AppCompatActivity() {
