@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">SYM - Labo 2</string>
     <string name="title_activity_compress">CompressActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -29,4 +29,5 @@
     <string name="middle_name">(middle_name)</string>
     <string name="firstname">(firstname)</string>
     <string name="name">(name)</string>
+    <string name="message">message</string>
 </resources>

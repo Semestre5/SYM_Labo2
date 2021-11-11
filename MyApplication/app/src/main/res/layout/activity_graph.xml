@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:clickable="false"
     android:clipToPadding="false"
-    tools:context=".GraphActivity">
+    tools:context=".activites.GraphActivity">
 
     <TextView
         android:id="@+id/textViewAuthor"

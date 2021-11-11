@@ -7,21 +7,21 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Spinner
-import ch.heigvd.sym.myapplication.CommunicationEventListener
 import ch.heigvd.sym.myapplication.R
-import ch.heigvd.sym.myapplication.SymComManager
+import ch.heigvd.sym.myapplication.Utils
+import ch.heigvd.sym.myapplication.communication.CommunicationEventListener
+import ch.heigvd.sym.myapplication.communication.SymComManager
 import ch.heigvd.sym.myapplication.model.Author
-import ch.heigvd.sym.myapplication.model.Book
 import org.json.JSONObject
 
 class GraphActivity : CommunicationEventListener, AppCompatActivity() {
 
     private lateinit var authors: Spinner
     private lateinit var books: ListView
-    val listAuthors = ArrayList<Author>()
-    val listBooks = ArrayList<Book>()
-    lateinit var adapterAuthor: ArrayAdapter<Author>
-    lateinit var adapterBook: ArrayAdapter<Book>
+    private val listAuthors = ArrayList<Author>()
+    private val listBooks = ArrayList<String>()
+    private lateinit var adapterAuthor: ArrayAdapter<Author>
+    private lateinit var adapterBook: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,8 @@ class GraphActivity : CommunicationEventListener, AppCompatActivity() {
         // Sett the variables to get the items on view and create the adapters
         authors = findViewById(R.id.spinnerAuthor)
         books = findViewById(R.id.listViewBooks)
-        adapterAuthor = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listAuthors)
+        adapterAuthor =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listAuthors)
         adapterBook = ArrayAdapter(this, android.R.layout.simple_list_item_1, listBooks)
         authors.adapter = adapterAuthor
         books.adapter = adapterBook
@@ -42,18 +43,21 @@ class GraphActivity : CommunicationEventListener, AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Do nothing
             }
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 // Send request with good id of author when we select an author
-                symComManager.sendRequest("http://mobile.iict.ch/graphql",
-                    ("{\"query\":\"{findAuthorById(id: " + listAuthors[position].id + "){books{title}}}\"}\"}").toByteArray(),
-                    "application/json")
+                symComManager.sendRequest(
+                    Utils.URL_GRAPHQL,
+                    ("{\"query\":\"{findAuthorById(id: " + listAuthors[position].id +
+                            "){books{title}}}\"}\"}").toByteArray(),
+                    Utils.CONTENT_JSON)
             }
         }
 
         // Send the request to fill the spinner with the authors
-        symComManager.sendRequest("http://mobile.iict.ch/graphql",
+        symComManager.sendRequest(Utils.URL_GRAPHQL,
             ("{\"query\":\"{findAllAuthors{id, name}}\"}").toByteArray(),
-            "application/json")
+            Utils.CONTENT_JSON)
     }
 
     override fun handleServerResponse(response: String) {
@@ -75,9 +79,8 @@ class GraphActivity : CommunicationEventListener, AppCompatActivity() {
             listBooks.clear()
             val books = data.getJSONObject("findAuthorById").getJSONArray("books")
             for (i in 0 until books.length()) {
-                val book = books.getJSONObject(i);
-                val b = Book(book.getString("title"))
-                listBooks.add(b)
+                val book = books.getJSONObject(i)
+                listBooks.add(book.getString("title"))
             }
             adapterBook.notifyDataSetChanged()
         }

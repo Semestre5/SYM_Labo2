@@ -21,12 +21,12 @@ public final class DirectoryOuterClass {
     /**
      * <code>repeated .Person results = 1;</code>
      */
-    java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person> 
+    java.util.List<DirectoryOuterClass.Person> 
         getResultsList();
     /**
      * <code>repeated .Person results = 1;</code>
      */
-    ch.heigvd.sym.myapplication.DirectoryOuterClass.Person getResults(int index);
+    DirectoryOuterClass.Person getResults(int index);
     /**
      * <code>repeated .Person results = 1;</code>
      */
@@ -34,12 +34,12 @@ public final class DirectoryOuterClass {
     /**
      * <code>repeated .Person results = 1;</code>
      */
-    java.util.List<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder> 
+    java.util.List<? extends DirectoryOuterClass.PersonOrBuilder> 
         getResultsOrBuilderList();
     /**
      * <code>repeated .Person results = 1;</code>
      */
-    ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder getResultsOrBuilder(
+    DirectoryOuterClass.PersonOrBuilder getResultsOrBuilder(
         int index);
   }
   /**
@@ -91,11 +91,11 @@ public final class DirectoryOuterClass {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                results_ = new java.util.ArrayList<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person>();
+                results_ = new java.util.ArrayList<DirectoryOuterClass.Person>();
                 mutable_bitField0_ |= 0x00000001;
               }
               results_.add(
-                  input.readMessage(ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.parser(), extensionRegistry));
+                  input.readMessage(DirectoryOuterClass.Person.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -122,31 +122,31 @@ public final class DirectoryOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Directory_descriptor;
+      return DirectoryOuterClass.internal_static_Directory_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Directory_fieldAccessorTable
+      return DirectoryOuterClass.internal_static_Directory_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.class, ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.Builder.class);
+              DirectoryOuterClass.Directory.class, DirectoryOuterClass.Directory.Builder.class);
     }
 
     public static final int RESULTS_FIELD_NUMBER = 1;
-    private java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person> results_;
+    private java.util.List<DirectoryOuterClass.Person> results_;
     /**
      * <code>repeated .Person results = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person> getResultsList() {
+    public java.util.List<DirectoryOuterClass.Person> getResultsList() {
       return results_;
     }
     /**
      * <code>repeated .Person results = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder> 
+    public java.util.List<? extends DirectoryOuterClass.PersonOrBuilder> 
         getResultsOrBuilderList() {
       return results_;
     }
@@ -161,14 +161,14 @@ public final class DirectoryOuterClass {
      * <code>repeated .Person results = 1;</code>
      */
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person getResults(int index) {
+    public DirectoryOuterClass.Person getResults(int index) {
       return results_.get(index);
     }
     /**
      * <code>repeated .Person results = 1;</code>
      */
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder getResultsOrBuilder(
+    public DirectoryOuterClass.PersonOrBuilder getResultsOrBuilder(
         int index) {
       return results_.get(index);
     }
@@ -213,10 +213,10 @@ public final class DirectoryOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory)) {
+      if (!(obj instanceof DirectoryOuterClass.Directory)) {
         return super.equals(obj);
       }
-      ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory other = (ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory) obj;
+      DirectoryOuterClass.Directory other = (DirectoryOuterClass.Directory) obj;
 
       if (!getResultsList()
           .equals(other.getResultsList())) return false;
@@ -240,69 +240,69 @@ public final class DirectoryOuterClass {
       return hash;
     }
 
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(byte[] data)
+    public static DirectoryOuterClass.Directory parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(java.io.InputStream input)
+    public static DirectoryOuterClass.Directory parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseDelimitedFrom(java.io.InputStream input)
+    public static DirectoryOuterClass.Directory parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseDelimitedFrom(
+    public static DirectoryOuterClass.Directory parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parseFrom(
+    public static DirectoryOuterClass.Directory parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -315,7 +315,7 @@ public final class DirectoryOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory prototype) {
+    public static Builder newBuilder(DirectoryOuterClass.Directory prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -336,18 +336,18 @@ public final class DirectoryOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Directory)
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.DirectoryOrBuilder {
+        DirectoryOuterClass.DirectoryOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Directory_descriptor;
+        return DirectoryOuterClass.internal_static_Directory_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Directory_fieldAccessorTable
+        return DirectoryOuterClass.internal_static_Directory_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.class, ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.Builder.class);
+                DirectoryOuterClass.Directory.class, DirectoryOuterClass.Directory.Builder.class);
       }
 
       // Construct using ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.newBuilder()
@@ -381,17 +381,17 @@ public final class DirectoryOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Directory_descriptor;
+        return DirectoryOuterClass.internal_static_Directory_descriptor;
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory getDefaultInstanceForType() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.getDefaultInstance();
+      public DirectoryOuterClass.Directory getDefaultInstanceForType() {
+        return DirectoryOuterClass.Directory.getDefaultInstance();
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory build() {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory result = buildPartial();
+      public DirectoryOuterClass.Directory build() {
+        DirectoryOuterClass.Directory result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -399,8 +399,8 @@ public final class DirectoryOuterClass {
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory buildPartial() {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory result = new ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory(this);
+      public DirectoryOuterClass.Directory buildPartial() {
+        DirectoryOuterClass.Directory result = new DirectoryOuterClass.Directory(this);
         int from_bitField0_ = bitField0_;
         if (resultsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -449,16 +449,16 @@ public final class DirectoryOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory) {
-          return mergeFrom((ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory)other);
+        if (other instanceof DirectoryOuterClass.Directory) {
+          return mergeFrom((DirectoryOuterClass.Directory)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory other) {
-        if (other == ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory.getDefaultInstance()) return this;
+      public Builder mergeFrom(DirectoryOuterClass.Directory other) {
+        if (other == DirectoryOuterClass.Directory.getDefaultInstance()) return this;
         if (resultsBuilder_ == null) {
           if (!other.results_.isEmpty()) {
             if (results_.isEmpty()) {
@@ -500,11 +500,11 @@ public final class DirectoryOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory parsedMessage = null;
+        DirectoryOuterClass.Directory parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory) e.getUnfinishedMessage();
+          parsedMessage = (DirectoryOuterClass.Directory) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -515,22 +515,22 @@ public final class DirectoryOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person> results_ =
+      private java.util.List<DirectoryOuterClass.Person> results_ =
         java.util.Collections.emptyList();
       private void ensureResultsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          results_ = new java.util.ArrayList<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person>(results_);
+          results_ = new java.util.ArrayList<DirectoryOuterClass.Person>(results_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ch.heigvd.sym.myapplication.DirectoryOuterClass.Person, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder, ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder> resultsBuilder_;
+          DirectoryOuterClass.Person, DirectoryOuterClass.Person.Builder, DirectoryOuterClass.PersonOrBuilder> resultsBuilder_;
 
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person> getResultsList() {
+      public java.util.List<DirectoryOuterClass.Person> getResultsList() {
         if (resultsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(results_);
         } else {
@@ -550,7 +550,7 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person getResults(int index) {
+      public DirectoryOuterClass.Person getResults(int index) {
         if (resultsBuilder_ == null) {
           return results_.get(index);
         } else {
@@ -561,7 +561,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Person results = 1;</code>
        */
       public Builder setResults(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person value) {
+          int index, DirectoryOuterClass.Person value) {
         if (resultsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -578,7 +578,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Person results = 1;</code>
        */
       public Builder setResults(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder builderForValue) {
+          int index, DirectoryOuterClass.Person.Builder builderForValue) {
         if (resultsBuilder_ == null) {
           ensureResultsIsMutable();
           results_.set(index, builderForValue.build());
@@ -591,7 +591,7 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public Builder addResults(ch.heigvd.sym.myapplication.DirectoryOuterClass.Person value) {
+      public Builder addResults(DirectoryOuterClass.Person value) {
         if (resultsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -608,7 +608,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Person results = 1;</code>
        */
       public Builder addResults(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person value) {
+          int index, DirectoryOuterClass.Person value) {
         if (resultsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -625,7 +625,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Person results = 1;</code>
        */
       public Builder addResults(
-          ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder builderForValue) {
+          DirectoryOuterClass.Person.Builder builderForValue) {
         if (resultsBuilder_ == null) {
           ensureResultsIsMutable();
           results_.add(builderForValue.build());
@@ -639,7 +639,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Person results = 1;</code>
        */
       public Builder addResults(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder builderForValue) {
+          int index, DirectoryOuterClass.Person.Builder builderForValue) {
         if (resultsBuilder_ == null) {
           ensureResultsIsMutable();
           results_.add(index, builderForValue.build());
@@ -653,7 +653,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Person results = 1;</code>
        */
       public Builder addAllResults(
-          java.lang.Iterable<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.Person> values) {
+          java.lang.Iterable<? extends DirectoryOuterClass.Person> values) {
         if (resultsBuilder_ == null) {
           ensureResultsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -693,14 +693,14 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder getResultsBuilder(
+      public DirectoryOuterClass.Person.Builder getResultsBuilder(
           int index) {
         return getResultsFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder getResultsOrBuilder(
+      public DirectoryOuterClass.PersonOrBuilder getResultsOrBuilder(
           int index) {
         if (resultsBuilder_ == null) {
           return results_.get(index);  } else {
@@ -710,7 +710,7 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public java.util.List<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder> 
+      public java.util.List<? extends DirectoryOuterClass.PersonOrBuilder> 
            getResultsOrBuilderList() {
         if (resultsBuilder_ != null) {
           return resultsBuilder_.getMessageOrBuilderList();
@@ -721,31 +721,31 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder addResultsBuilder() {
+      public DirectoryOuterClass.Person.Builder addResultsBuilder() {
         return getResultsFieldBuilder().addBuilder(
-            ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.getDefaultInstance());
+            DirectoryOuterClass.Person.getDefaultInstance());
       }
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder addResultsBuilder(
+      public DirectoryOuterClass.Person.Builder addResultsBuilder(
           int index) {
         return getResultsFieldBuilder().addBuilder(
-            index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.getDefaultInstance());
+            index, DirectoryOuterClass.Person.getDefaultInstance());
       }
       /**
        * <code>repeated .Person results = 1;</code>
        */
-      public java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder> 
+      public java.util.List<DirectoryOuterClass.Person.Builder> 
            getResultsBuilderList() {
         return getResultsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ch.heigvd.sym.myapplication.DirectoryOuterClass.Person, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder, ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder> 
+          DirectoryOuterClass.Person, DirectoryOuterClass.Person.Builder, DirectoryOuterClass.PersonOrBuilder> 
           getResultsFieldBuilder() {
         if (resultsBuilder_ == null) {
           resultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ch.heigvd.sym.myapplication.DirectoryOuterClass.Person, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder, ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder>(
+              DirectoryOuterClass.Person, DirectoryOuterClass.Person.Builder, DirectoryOuterClass.PersonOrBuilder>(
                   results_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -771,12 +771,12 @@ public final class DirectoryOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:Directory)
-    private static final ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory DEFAULT_INSTANCE;
+    private static final DirectoryOuterClass.Directory DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory();
+      DEFAULT_INSTANCE = new DirectoryOuterClass.Directory();
     }
 
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory getDefaultInstance() {
+    public static DirectoryOuterClass.Directory getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -801,7 +801,7 @@ public final class DirectoryOuterClass {
     }
 
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.Directory getDefaultInstanceForType() {
+    public DirectoryOuterClass.Directory getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -850,12 +850,12 @@ public final class DirectoryOuterClass {
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
-    java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone> 
+    java.util.List<DirectoryOuterClass.Phone> 
         getPhoneList();
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
-    ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone getPhone(int index);
+    DirectoryOuterClass.Phone getPhone(int index);
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
@@ -863,12 +863,12 @@ public final class DirectoryOuterClass {
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
-    java.util.List<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder> 
+    java.util.List<? extends DirectoryOuterClass.PhoneOrBuilder> 
         getPhoneOrBuilderList();
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
-    ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder getPhoneOrBuilder(
+    DirectoryOuterClass.PhoneOrBuilder getPhoneOrBuilder(
         int index);
   }
   /**
@@ -941,11 +941,11 @@ public final class DirectoryOuterClass {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                phone_ = new java.util.ArrayList<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone>();
+                phone_ = new java.util.ArrayList<DirectoryOuterClass.Phone>();
                 mutable_bitField0_ |= 0x00000001;
               }
               phone_.add(
-                  input.readMessage(ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.parser(), extensionRegistry));
+                  input.readMessage(DirectoryOuterClass.Phone.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -972,15 +972,15 @@ public final class DirectoryOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Person_descriptor;
+      return DirectoryOuterClass.internal_static_Person_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Person_fieldAccessorTable
+      return DirectoryOuterClass.internal_static_Person_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.class, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder.class);
+              DirectoryOuterClass.Person.class, DirectoryOuterClass.Person.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -1098,19 +1098,19 @@ public final class DirectoryOuterClass {
     }
 
     public static final int PHONE_FIELD_NUMBER = 4;
-    private java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone> phone_;
+    private java.util.List<DirectoryOuterClass.Phone> phone_;
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone> getPhoneList() {
+    public java.util.List<DirectoryOuterClass.Phone> getPhoneList() {
       return phone_;
     }
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder> 
+    public java.util.List<? extends DirectoryOuterClass.PhoneOrBuilder> 
         getPhoneOrBuilderList() {
       return phone_;
     }
@@ -1125,14 +1125,14 @@ public final class DirectoryOuterClass {
      * <code>repeated .Phone phone = 4;</code>
      */
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone getPhone(int index) {
+    public DirectoryOuterClass.Phone getPhone(int index) {
       return phone_.get(index);
     }
     /**
      * <code>repeated .Phone phone = 4;</code>
      */
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder getPhoneOrBuilder(
+    public DirectoryOuterClass.PhoneOrBuilder getPhoneOrBuilder(
         int index) {
       return phone_.get(index);
     }
@@ -1195,10 +1195,10 @@ public final class DirectoryOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ch.heigvd.sym.myapplication.DirectoryOuterClass.Person)) {
+      if (!(obj instanceof DirectoryOuterClass.Person)) {
         return super.equals(obj);
       }
-      ch.heigvd.sym.myapplication.DirectoryOuterClass.Person other = (ch.heigvd.sym.myapplication.DirectoryOuterClass.Person) obj;
+      DirectoryOuterClass.Person other = (DirectoryOuterClass.Person) obj;
 
       if (!getName()
           .equals(other.getName())) return false;
@@ -1234,69 +1234,69 @@ public final class DirectoryOuterClass {
       return hash;
     }
 
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(byte[] data)
+    public static DirectoryOuterClass.Person parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(java.io.InputStream input)
+    public static DirectoryOuterClass.Person parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseDelimitedFrom(java.io.InputStream input)
+    public static DirectoryOuterClass.Person parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseDelimitedFrom(
+    public static DirectoryOuterClass.Person parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parseFrom(
+    public static DirectoryOuterClass.Person parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1309,7 +1309,7 @@ public final class DirectoryOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ch.heigvd.sym.myapplication.DirectoryOuterClass.Person prototype) {
+    public static Builder newBuilder(DirectoryOuterClass.Person prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1330,18 +1330,18 @@ public final class DirectoryOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Person)
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.PersonOrBuilder {
+        DirectoryOuterClass.PersonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Person_descriptor;
+        return DirectoryOuterClass.internal_static_Person_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Person_fieldAccessorTable
+        return DirectoryOuterClass.internal_static_Person_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.class, ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.Builder.class);
+                DirectoryOuterClass.Person.class, DirectoryOuterClass.Person.Builder.class);
       }
 
       // Construct using ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.newBuilder()
@@ -1381,17 +1381,17 @@ public final class DirectoryOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Person_descriptor;
+        return DirectoryOuterClass.internal_static_Person_descriptor;
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person getDefaultInstanceForType() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.getDefaultInstance();
+      public DirectoryOuterClass.Person getDefaultInstanceForType() {
+        return DirectoryOuterClass.Person.getDefaultInstance();
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person build() {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Person result = buildPartial();
+      public DirectoryOuterClass.Person build() {
+        DirectoryOuterClass.Person result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1399,8 +1399,8 @@ public final class DirectoryOuterClass {
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person buildPartial() {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Person result = new ch.heigvd.sym.myapplication.DirectoryOuterClass.Person(this);
+      public DirectoryOuterClass.Person buildPartial() {
+        DirectoryOuterClass.Person result = new DirectoryOuterClass.Person(this);
         int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.firstname_ = firstname_;
@@ -1452,16 +1452,16 @@ public final class DirectoryOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ch.heigvd.sym.myapplication.DirectoryOuterClass.Person) {
-          return mergeFrom((ch.heigvd.sym.myapplication.DirectoryOuterClass.Person)other);
+        if (other instanceof DirectoryOuterClass.Person) {
+          return mergeFrom((DirectoryOuterClass.Person)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ch.heigvd.sym.myapplication.DirectoryOuterClass.Person other) {
-        if (other == ch.heigvd.sym.myapplication.DirectoryOuterClass.Person.getDefaultInstance()) return this;
+      public Builder mergeFrom(DirectoryOuterClass.Person other) {
+        if (other == DirectoryOuterClass.Person.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -1515,11 +1515,11 @@ public final class DirectoryOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Person parsedMessage = null;
+        DirectoryOuterClass.Person parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ch.heigvd.sym.myapplication.DirectoryOuterClass.Person) e.getUnfinishedMessage();
+          parsedMessage = (DirectoryOuterClass.Person) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1758,22 +1758,22 @@ public final class DirectoryOuterClass {
         return this;
       }
 
-      private java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone> phone_ =
+      private java.util.List<DirectoryOuterClass.Phone> phone_ =
         java.util.Collections.emptyList();
       private void ensurePhoneIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          phone_ = new java.util.ArrayList<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone>(phone_);
+          phone_ = new java.util.ArrayList<DirectoryOuterClass.Phone>(phone_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder, ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder> phoneBuilder_;
+          DirectoryOuterClass.Phone, DirectoryOuterClass.Phone.Builder, DirectoryOuterClass.PhoneOrBuilder> phoneBuilder_;
 
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone> getPhoneList() {
+      public java.util.List<DirectoryOuterClass.Phone> getPhoneList() {
         if (phoneBuilder_ == null) {
           return java.util.Collections.unmodifiableList(phone_);
         } else {
@@ -1793,7 +1793,7 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone getPhone(int index) {
+      public DirectoryOuterClass.Phone getPhone(int index) {
         if (phoneBuilder_ == null) {
           return phone_.get(index);
         } else {
@@ -1804,7 +1804,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Phone phone = 4;</code>
        */
       public Builder setPhone(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone value) {
+          int index, DirectoryOuterClass.Phone value) {
         if (phoneBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1821,7 +1821,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Phone phone = 4;</code>
        */
       public Builder setPhone(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder builderForValue) {
+          int index, DirectoryOuterClass.Phone.Builder builderForValue) {
         if (phoneBuilder_ == null) {
           ensurePhoneIsMutable();
           phone_.set(index, builderForValue.build());
@@ -1834,7 +1834,7 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public Builder addPhone(ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone value) {
+      public Builder addPhone(DirectoryOuterClass.Phone value) {
         if (phoneBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1851,7 +1851,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Phone phone = 4;</code>
        */
       public Builder addPhone(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone value) {
+          int index, DirectoryOuterClass.Phone value) {
         if (phoneBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1868,7 +1868,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Phone phone = 4;</code>
        */
       public Builder addPhone(
-          ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder builderForValue) {
+          DirectoryOuterClass.Phone.Builder builderForValue) {
         if (phoneBuilder_ == null) {
           ensurePhoneIsMutable();
           phone_.add(builderForValue.build());
@@ -1882,7 +1882,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Phone phone = 4;</code>
        */
       public Builder addPhone(
-          int index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder builderForValue) {
+          int index, DirectoryOuterClass.Phone.Builder builderForValue) {
         if (phoneBuilder_ == null) {
           ensurePhoneIsMutable();
           phone_.add(index, builderForValue.build());
@@ -1896,7 +1896,7 @@ public final class DirectoryOuterClass {
        * <code>repeated .Phone phone = 4;</code>
        */
       public Builder addAllPhone(
-          java.lang.Iterable<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone> values) {
+          java.lang.Iterable<? extends DirectoryOuterClass.Phone> values) {
         if (phoneBuilder_ == null) {
           ensurePhoneIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1936,14 +1936,14 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder getPhoneBuilder(
+      public DirectoryOuterClass.Phone.Builder getPhoneBuilder(
           int index) {
         return getPhoneFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder getPhoneOrBuilder(
+      public DirectoryOuterClass.PhoneOrBuilder getPhoneOrBuilder(
           int index) {
         if (phoneBuilder_ == null) {
           return phone_.get(index);  } else {
@@ -1953,7 +1953,7 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public java.util.List<? extends ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder> 
+      public java.util.List<? extends DirectoryOuterClass.PhoneOrBuilder> 
            getPhoneOrBuilderList() {
         if (phoneBuilder_ != null) {
           return phoneBuilder_.getMessageOrBuilderList();
@@ -1964,31 +1964,31 @@ public final class DirectoryOuterClass {
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder addPhoneBuilder() {
+      public DirectoryOuterClass.Phone.Builder addPhoneBuilder() {
         return getPhoneFieldBuilder().addBuilder(
-            ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.getDefaultInstance());
+            DirectoryOuterClass.Phone.getDefaultInstance());
       }
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder addPhoneBuilder(
+      public DirectoryOuterClass.Phone.Builder addPhoneBuilder(
           int index) {
         return getPhoneFieldBuilder().addBuilder(
-            index, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.getDefaultInstance());
+            index, DirectoryOuterClass.Phone.getDefaultInstance());
       }
       /**
        * <code>repeated .Phone phone = 4;</code>
        */
-      public java.util.List<ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder> 
+      public java.util.List<DirectoryOuterClass.Phone.Builder> 
            getPhoneBuilderList() {
         return getPhoneFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder, ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder> 
+          DirectoryOuterClass.Phone, DirectoryOuterClass.Phone.Builder, DirectoryOuterClass.PhoneOrBuilder> 
           getPhoneFieldBuilder() {
         if (phoneBuilder_ == null) {
           phoneBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder, ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder>(
+              DirectoryOuterClass.Phone, DirectoryOuterClass.Phone.Builder, DirectoryOuterClass.PhoneOrBuilder>(
                   phone_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2014,12 +2014,12 @@ public final class DirectoryOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:Person)
-    private static final ch.heigvd.sym.myapplication.DirectoryOuterClass.Person DEFAULT_INSTANCE;
+    private static final DirectoryOuterClass.Person DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ch.heigvd.sym.myapplication.DirectoryOuterClass.Person();
+      DEFAULT_INSTANCE = new DirectoryOuterClass.Person();
     }
 
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Person getDefaultInstance() {
+    public static DirectoryOuterClass.Person getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2044,7 +2044,7 @@ public final class DirectoryOuterClass {
     }
 
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.Person getDefaultInstanceForType() {
+    public DirectoryOuterClass.Person getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2063,7 +2063,7 @@ public final class DirectoryOuterClass {
      * <code>.Phone.Type type = 1;</code>
      * @return The type.
      */
-    ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type getType();
+    DirectoryOuterClass.Phone.Type getType();
 
     /**
      * <code>string number = 2;</code>
@@ -2157,15 +2157,15 @@ public final class DirectoryOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Phone_descriptor;
+      return DirectoryOuterClass.internal_static_Phone_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Phone_fieldAccessorTable
+      return DirectoryOuterClass.internal_static_Phone_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.class, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder.class);
+              DirectoryOuterClass.Phone.class, DirectoryOuterClass.Phone.Builder.class);
     }
 
     /**
@@ -2259,7 +2259,7 @@ public final class DirectoryOuterClass {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.getDescriptor().getEnumTypes().get(0);
+        return DirectoryOuterClass.Phone.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Type[] VALUES = values();
@@ -2298,10 +2298,10 @@ public final class DirectoryOuterClass {
      * <code>.Phone.Type type = 1;</code>
      * @return The type.
      */
-    @java.lang.Override public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type getType() {
+    @java.lang.Override public DirectoryOuterClass.Phone.Type getType() {
       @SuppressWarnings("deprecation")
-      ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type result = ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type.valueOf(type_);
-      return result == null ? ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type.UNRECOGNIZED : result;
+      DirectoryOuterClass.Phone.Type result = DirectoryOuterClass.Phone.Type.valueOf(type_);
+      return result == null ? DirectoryOuterClass.Phone.Type.UNRECOGNIZED : result;
     }
 
     public static final int NUMBER_FIELD_NUMBER = 2;
@@ -2356,7 +2356,7 @@ public final class DirectoryOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type.HOME.getNumber()) {
+      if (type_ != DirectoryOuterClass.Phone.Type.HOME.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
@@ -2371,7 +2371,7 @@ public final class DirectoryOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type.HOME.getNumber()) {
+      if (type_ != DirectoryOuterClass.Phone.Type.HOME.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
@@ -2388,10 +2388,10 @@ public final class DirectoryOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone)) {
+      if (!(obj instanceof DirectoryOuterClass.Phone)) {
         return super.equals(obj);
       }
-      ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone other = (ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone) obj;
+      DirectoryOuterClass.Phone other = (DirectoryOuterClass.Phone) obj;
 
       if (type_ != other.type_) return false;
       if (!getNumber()
@@ -2416,69 +2416,69 @@ public final class DirectoryOuterClass {
       return hash;
     }
 
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(byte[] data)
+    public static DirectoryOuterClass.Phone parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(java.io.InputStream input)
+    public static DirectoryOuterClass.Phone parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseDelimitedFrom(java.io.InputStream input)
+    public static DirectoryOuterClass.Phone parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseDelimitedFrom(
+    public static DirectoryOuterClass.Phone parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parseFrom(
+    public static DirectoryOuterClass.Phone parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2491,7 +2491,7 @@ public final class DirectoryOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone prototype) {
+    public static Builder newBuilder(DirectoryOuterClass.Phone prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2512,18 +2512,18 @@ public final class DirectoryOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Phone)
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.PhoneOrBuilder {
+        DirectoryOuterClass.PhoneOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Phone_descriptor;
+        return DirectoryOuterClass.internal_static_Phone_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Phone_fieldAccessorTable
+        return DirectoryOuterClass.internal_static_Phone_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.class, ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Builder.class);
+                DirectoryOuterClass.Phone.class, DirectoryOuterClass.Phone.Builder.class);
       }
 
       // Construct using ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.newBuilder()
@@ -2554,17 +2554,17 @@ public final class DirectoryOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.internal_static_Phone_descriptor;
+        return DirectoryOuterClass.internal_static_Phone_descriptor;
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone getDefaultInstanceForType() {
-        return ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.getDefaultInstance();
+      public DirectoryOuterClass.Phone getDefaultInstanceForType() {
+        return DirectoryOuterClass.Phone.getDefaultInstance();
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone build() {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone result = buildPartial();
+      public DirectoryOuterClass.Phone build() {
+        DirectoryOuterClass.Phone result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2572,8 +2572,8 @@ public final class DirectoryOuterClass {
       }
 
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone buildPartial() {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone result = new ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone(this);
+      public DirectoryOuterClass.Phone buildPartial() {
+        DirectoryOuterClass.Phone result = new DirectoryOuterClass.Phone(this);
         result.type_ = type_;
         result.number_ = number_;
         onBuilt();
@@ -2614,16 +2614,16 @@ public final class DirectoryOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone) {
-          return mergeFrom((ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone)other);
+        if (other instanceof DirectoryOuterClass.Phone) {
+          return mergeFrom((DirectoryOuterClass.Phone)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone other) {
-        if (other == ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.getDefaultInstance()) return this;
+      public Builder mergeFrom(DirectoryOuterClass.Phone other) {
+        if (other == DirectoryOuterClass.Phone.getDefaultInstance()) return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -2646,11 +2646,11 @@ public final class DirectoryOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone parsedMessage = null;
+        DirectoryOuterClass.Phone parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone) e.getUnfinishedMessage();
+          parsedMessage = (DirectoryOuterClass.Phone) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2684,17 +2684,17 @@ public final class DirectoryOuterClass {
        * @return The type.
        */
       @java.lang.Override
-      public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type getType() {
+      public DirectoryOuterClass.Phone.Type getType() {
         @SuppressWarnings("deprecation")
-        ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type result = ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type.valueOf(type_);
-        return result == null ? ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type.UNRECOGNIZED : result;
+        DirectoryOuterClass.Phone.Type result = DirectoryOuterClass.Phone.Type.valueOf(type_);
+        return result == null ? DirectoryOuterClass.Phone.Type.UNRECOGNIZED : result;
       }
       /**
        * <code>.Phone.Type type = 1;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone.Type value) {
+      public Builder setType(DirectoryOuterClass.Phone.Type value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2806,12 +2806,12 @@ public final class DirectoryOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:Phone)
-    private static final ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone DEFAULT_INSTANCE;
+    private static final DirectoryOuterClass.Phone DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone();
+      DEFAULT_INSTANCE = new DirectoryOuterClass.Phone();
     }
 
-    public static ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone getDefaultInstance() {
+    public static DirectoryOuterClass.Phone getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2836,7 +2836,7 @@ public final class DirectoryOuterClass {
     }
 
     @java.lang.Override
-    public ch.heigvd.sym.myapplication.DirectoryOuterClass.Phone getDefaultInstanceForType() {
+    public DirectoryOuterClass.Phone getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

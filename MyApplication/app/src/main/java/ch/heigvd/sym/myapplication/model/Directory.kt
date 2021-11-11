@@ -70,7 +70,6 @@ class Directory (
         }
         xmlSerializer.endTag("", "directory")
         xmlSerializer.endDocument()
-
         return writer.toString()
     }
 

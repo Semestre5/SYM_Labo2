@@ -2,8 +2,9 @@ package ch.heigvd.sym.myapplication.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ch.heigvd.sym.myapplication.CommunicationEventListener
-import ch.heigvd.sym.myapplication.SymComManager
+import ch.heigvd.sym.myapplication.Utils
+import ch.heigvd.sym.myapplication.communication.CommunicationEventListener
+import ch.heigvd.sym.myapplication.communication.SymComManager
 import ch.heigvd.sym.myapplication.databinding.ActivityDeferedBinding
 import java.util.*
 
@@ -24,7 +25,7 @@ class DeferedActivity : CommunicationEventListener, AppCompatActivity() {
             override fun run() {
                 while (true) {
                     for(item : String in queue){
-                        symComManager.sendRequest("http://mobile.iict.ch/api/txt", item.toByteArray())
+                        symComManager.sendRequest(Utils.URL_TXT, item.toByteArray())
                     }
                     sleep(10000)
                 }

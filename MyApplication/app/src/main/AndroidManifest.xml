@@ -24,9 +24,7 @@
             android:exported="true" />
         <activity
             android:name=".activites.CompressActivity"
-            android:exported="true"
-            android:label="@string/title_activity_compress"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -2,7 +2,9 @@ package ch.heigvd.sym.myapplication.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ch.heigvd.sym.myapplication.*
+import ch.heigvd.sym.myapplication.Utils
+import ch.heigvd.sym.myapplication.communication.CommunicationEventListener
+import ch.heigvd.sym.myapplication.communication.SymComManager
 import ch.heigvd.sym.myapplication.databinding.ActivitySerializationBinding
 import ch.heigvd.sym.myapplication.model.Directory
 import ch.heigvd.sym.myapplication.model.Person
@@ -34,18 +36,14 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
             directory.addPerson(person)
             when(binding.radioSer.checkedRadioButtonId) {
                 binding.radioXml.id ->
-                    symComManager.sendRequest("http://mobile.iict.ch/api/xml",
-                        directory.serializeXML().toByteArray(),
-                        "application/xml")
+                    symComManager.sendRequest(
+                        Utils.URL_XML, directory.serializeXML().toByteArray(), Utils.CONTENT_XML)
                 binding.radioProtobuf.id ->
                     symComManager.sendRequest(
-                        "http://mobile.iict.ch/api/protobuf",
-                        directory.serializeProtoBuf(),
-                        "application/protobuf")
+                        Utils.URL_PROTOBUF, directory.serializeProtoBuf(), Utils.CONTENT_PROTOBUF)
                 binding.radioJson.id ->
-                    symComManager.sendRequest("http://mobile.iict.ch/api/json",
-                        person.serializeJSON().toByteArray(),
-                        "application/json")
+                    symComManager.sendRequest(
+                        Utils.URL_JSON, person.serializeJSON().toByteArray(), Utils.CONTENT_JSON)
             }
         }
 

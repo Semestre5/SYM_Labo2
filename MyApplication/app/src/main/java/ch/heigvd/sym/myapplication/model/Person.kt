@@ -35,7 +35,7 @@ data class Person(
         fun deserializeProtoBuf(person : DirectoryOuterClass.Person) : Person {
             val name = person.name
             val firstname = person.firstname
-            var phones: MutableList<Phone> = emptyList<Phone>().toMutableList()
+            val phones: MutableList<Phone> = emptyList<Phone>().toMutableList()
             for (phone in person.phoneList){
                 phones.add(Phone.deserializeProtoBuf(phone))
             }
@@ -50,18 +50,17 @@ data class Person(
         }
 
         fun deserializePersonAndPhonesXML(xmlPullParser: XmlPullParser): Person? {
-            var name: String = ""
+            var name = ""
             var middlename: String? = ""
-            var firstname: String = ""
-            var phone: String = ""
-            var phoneType: String = ""
-            var text: String = ""
-            var phones = emptyList<Phone>().toMutableList()
+            var firstname = ""
+            var phoneType = ""
+            var text = ""
+            val phones = emptyList<Phone>().toMutableList()
             while (xmlPullParser.next() != XmlPullParser.END_DOCUMENT) {
                 when (xmlPullParser.eventType) {
                     XmlPullParser.START_TAG ->
                         if (xmlPullParser.name == "phone") {
-                            phoneType = xmlPullParser.getAttributeValue(null, "type");
+                            phoneType = xmlPullParser.getAttributeValue(null, "type")
                         }
                     XmlPullParser.TEXT -> text = xmlPullParser.text
                     XmlPullParser.END_TAG ->
@@ -79,7 +78,7 @@ data class Person(
                         }
                 }
             }
-            return null;
+            return null
         }
     }
 }

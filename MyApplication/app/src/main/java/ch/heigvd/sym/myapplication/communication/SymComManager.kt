@@ -1,4 +1,4 @@
-package ch.heigvd.sym.myapplication
+package ch.heigvd.sym.myapplication.communication
 
 import android.os.Looper
 import android.os.Handler
