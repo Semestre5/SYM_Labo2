@@ -40,14 +40,14 @@ class GraphActivity : CommunicationEventListener, AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 // Send request with good id of author when we select an author
                 symComManager.sendRequest("http://mobile.iict.ch/graphql",
-                    "{\"query\":\"{findAuthorById(id: " + listAuthors[position].id + "){books{title}}}\"}\"}",
+                    ("{\"query\":\"{findAuthorById(id: " + listAuthors[position].id + "){books{title}}}\"}\"}").toByteArray(),
                     "application/json")
             }
         }
 
         // Send the request to fill the spinner with the authors
         symComManager.sendRequest("http://mobile.iict.ch/graphql",
-            "{\"query\":\"{findAllAuthors{id, name}}\"}",
+            ("{\"query\":\"{findAllAuthors{id, name}}\"}").toByteArray(),
             "application/json")
     }
 

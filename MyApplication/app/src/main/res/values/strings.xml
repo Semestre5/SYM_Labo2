@@ -16,4 +16,17 @@
     <string name="graphql">GraphQL</string>
     <string name="envoyer">Envoyer</string>
     <string name="entrez_votre_texte">Entrez votre texte</string>
+    <string name="Send">Send</string>
+    <string name="format_of_serialization">Format of serialization</string>
+    <string name="protobuf">ProtoBuf</string>
+    <string name="json">JSON</string>
+    <string name="xml">XML</string>
+    <string name="mobile">Mobile</string>
+    <string name="work">Work</string>
+    <string name="home">Home</string>
+    <string name="phone_type">Phone type</string>
+    <string name="mail_address">(mail address)</string>
+    <string name="middle_name">(middle_name)</string>
+    <string name="firstname">(firstname)</string>
+    <string name="name">(name)</string>
 </resources>

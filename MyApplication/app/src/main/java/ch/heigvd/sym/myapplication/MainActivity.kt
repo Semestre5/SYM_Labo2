@@ -9,9 +9,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root);
+        setContentView(binding.root)
 
         binding.buttonAsync.setOnClickListener {
             val intent = Intent(this@MainActivity, AsyncronActivity::class.java)
@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, CompressActivity::class.java)
             startActivity(intent)
         }
+
         binding.buttonGraphql.setOnClickListener {
             val intent = Intent(this@MainActivity, GraphActivity::class.java)
             startActivity(intent)

@@ -16,7 +16,7 @@ class CompressActivity : CommunicationEventListener, AppCompatActivity() {
 
         binding.sendButton.setOnClickListener {
             Log.d("input", binding.userInput.text.toString())
-            symComManager.sendRequest("http://mobile.iict.ch/api/txt", binding.userInput.text.toString(), compressed = true)
+            symComManager.sendRequest("http://mobile.iict.ch/api/txt", binding.userInput.text.toString().toByteArray(), compressed = true)
         }
     }
 
