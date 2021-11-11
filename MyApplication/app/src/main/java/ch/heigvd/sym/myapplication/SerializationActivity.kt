@@ -43,18 +43,17 @@ class SerializationActivity : CommunicationEventListener, AppCompatActivity() {
                         person.serializeJSON().toByteArray(),
                         "application/json")
             }
-            //binding.textViewAnswer.text = Parser().deserializeXML(serialized).persons.toString()
         }
 
     }
     override fun handleServerResponse(response: String) {
         when(binding.radioSer.checkedRadioButtonId) {
             binding.radioXml.id ->
-                binding.textViewAnswer.text = Parser().deserializeXML(response).toString()
+                binding.textViewAnswer.text = Directory.deserializeXML(response).toString()
             binding.radioProtobuf.id ->
-                binding.textViewAnswer.text = Parser().deserializeProtoBuf(response).toString()
+                binding.textViewAnswer.text = Directory.deserializeProtoBuf(response).toString()
             binding.radioJson.id ->
-                binding.textViewAnswer.text = Parser().deserializeJSON(response).toString()
+                binding.textViewAnswer.text = Directory.deserializeJSON(response).toString()
         }
     }
 }
