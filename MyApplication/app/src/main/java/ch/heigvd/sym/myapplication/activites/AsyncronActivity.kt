@@ -7,6 +7,12 @@ import ch.heigvd.sym.myapplication.communication.CommunicationEventListener
 import ch.heigvd.sym.myapplication.communication.SymComManager
 import ch.heigvd.sym.myapplication.databinding.ActivityAsyncronBinding
 
+/**
+ * Authors : Axel Vallon, Lev Pozniakoff and Robin Gaudin
+ * Date : 12.11.2021
+ * AsynconActivity : Send a message to a server and show it
+ */
+
 class AsyncronActivity : CommunicationEventListener, AppCompatActivity() {
     private lateinit var binding: ActivityAsyncronBinding
 

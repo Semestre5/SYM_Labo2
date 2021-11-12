@@ -7,7 +7,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
-    tools:context=".activites.DeferedActivity">
+    tools:context=".activites.DeferredActivity">
 
     <EditText
         android:id="@+id/user_input"

@@ -6,6 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import ch.heigvd.sym.myapplication.activites.*
 import ch.heigvd.sym.myapplication.databinding.ActivityMainBinding
 
+/**
+ * Authors : Axel Vallon, Lev Pozniakoff and Robin Gaudin
+ * Date : 12.11.2021
+ * MainActivity: Redirect user to different activities
+ */
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -20,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonDiff.setOnClickListener {
-            val intent = Intent(this@MainActivity, DeferedActivity::class.java)
+            val intent = Intent(this@MainActivity, DeferredActivity::class.java)
             startActivity(intent)
         }
 

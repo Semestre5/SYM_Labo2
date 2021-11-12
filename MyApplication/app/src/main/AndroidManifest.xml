@@ -17,7 +17,7 @@
             android:name=".activites.SerializationActivity"
             android:exported="true" />
         <activity
-            android:name=".activites.DeferedActivity"
+            android:name=".activites.DeferredActivity"
             android:exported="true" />
         <activity
             android:name=".activites.AsyncronActivity"

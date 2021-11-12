@@ -14,6 +14,12 @@ import ch.heigvd.sym.myapplication.communication.SymComManager
 import ch.heigvd.sym.myapplication.model.Author
 import org.json.JSONObject
 
+/**
+ * Authors : Axel Vallon, Lev Pozniakoff and Robin Gaudin
+ * Date : 12.11.2021
+ * GraphActivity: Allow a user to show authors and associated books from a distant server
+ */
+
 class GraphActivity : CommunicationEventListener, AppCompatActivity() {
 
     private lateinit var authors: Spinner

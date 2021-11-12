@@ -2,11 +2,18 @@ package ch.heigvd.sym.myapplication.model
 
 import android.util.Xml
 import ch.heigvd.sym.myapplication.DirectoryOuterClass
+import ch.heigvd.sym.myapplication.Utils
 import com.google.gson.Gson
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import java.io.StringWriter
 import java.lang.StringBuilder
+
+/**
+ * Authors : Axel Vallon, Lev Pozniakoff and Robin Gaudin
+ * Date : 12.11.2021
+ * Directory: class with Parser and Serializer for JSON, XML and Protocol Buffer
+ */
 
 class Directory (
     private var persons: MutableList<Person> = emptyList<Person>().toMutableList()
@@ -17,6 +24,13 @@ class Directory (
     fun addPerson(person: Person?){
         if (person != null)
             persons.add(person)
+    }
+
+    /**
+     * Serialize from String format in JSON
+     */
+    fun serializeJSON(): String {
+        return Gson().toJson(this)
     }
 
     /**
@@ -34,41 +48,20 @@ class Directory (
      * Serialize this Directory in XML format
      */
     fun serializeXML(): String {
+        // document xml initialization
+
         val xmlSerializer = Xml.newSerializer()
         val writer = StringWriter()
-
         xmlSerializer.setOutput(writer)
         xmlSerializer.startDocument("UTF-8", false)
-        xmlSerializer.docdecl(" directory SYSTEM \"http://mobile.iict.ch/directory.dtd\"")
+        xmlSerializer.docdecl(Utils.XML_DTD)
 
-        xmlSerializer.startTag("", "directory")
+        xmlSerializer.startTag("", Utils.TAG_DIRECTORY)
+        // add all Person in Directory
         for (person in persons) {
-            xmlSerializer.startTag("", "person")
-
-            xmlSerializer.startTag("", "name")
-            xmlSerializer.text(person.name)
-            xmlSerializer.endTag("", "name")
-
-            xmlSerializer.startTag("", "firstname")
-            xmlSerializer.text(person.firstname)
-            xmlSerializer.endTag("", "firstname")
-
-            if (person.middle_name != null && person.middle_name != "") {
-                xmlSerializer.startTag("", "middlename")
-                xmlSerializer.text(person.middle_name)
-                xmlSerializer.endTag("", "middlename")
-            }
-
-            for (phone in person.phones) {
-                xmlSerializer.startTag("", "phone")
-                xmlSerializer.attribute("", "type", phone.typephone)
-                xmlSerializer.text(phone.phone)
-                xmlSerializer.endTag("", "phone")
-            }
-
-            xmlSerializer.endTag("", "person")
+            person.serializeXML(xmlSerializer)
         }
-        xmlSerializer.endTag("", "directory")
+        xmlSerializer.endTag("", Utils.TAG_DIRECTORY)
         xmlSerializer.endDocument()
         return writer.toString()
     }
@@ -78,38 +71,53 @@ class Directory (
         val sb = StringBuilder()
         for (person in persons) {
             sb.append(person.toString())
+            sb.append(System.getProperty("line.separator"))
         }
         return sb.toString()
     }
 
     companion object {
+        /**
+         * Static method to deserialize a Directory from Protocol Buffer format
+         */
         fun deserializeProtoBuf(response: String): Directory {
             val directoryBuilder = DirectoryOuterClass.Directory.parseFrom(response.toByteArray())
             val directory = Directory()
             for (person in directoryBuilder.resultsList){
                 directory.addPerson(Person.deserializeProtoBuf(person))
             }
-            return directory;
+            return directory
         }
 
+        /**
+         * Static method to deserialize a Directory from JSON format
+         */
         fun deserializeJSON(json : String) : Directory? {
             return Gson().fromJson(json, Directory::class.java)
         }
 
+        /**
+         * Static method to deserialize a Directory from XML format
+         */
         fun deserializeXML(xml : String) : Directory {
             val directory = Directory()
+
+            // creation of XML parser
             val parserFactory = XmlPullParserFactory.newInstance()
             val parser = parserFactory.newPullParser()
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false)
             parser.setInput(xml.byteInputStream(), null)
+
+            // parse all XML document
             while (parser.next() != XmlPullParser.END_DOCUMENT) {
                 when (parser.eventType) {
+                    // Person encountered, Person class do the job for each Person
                     XmlPullParser.START_TAG -> when (parser.name) {
-                        "person" -> directory.addPerson(Person.deserializePersonAndPhonesXML(parser))
+                        Utils.TAG_PERSON -> directory.addPerson(Person.deserializePersonAndPhonesXML(parser))
                     }
                 }
             }
-            return directory;
+            return directory
         }
     }
 }

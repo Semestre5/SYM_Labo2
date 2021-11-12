@@ -13,7 +13,13 @@ import java.util.zip.Inflater
 import java.util.zip.InflaterInputStream
 import kotlin.concurrent.thread
 
-class SymComManager(var communicationEventListener: CommunicationEventListener? = null) {
+/**
+ * Authors : Axel Vallon, Lev Pozniakoff and Robin Gaudin
+ * Date : 12.11.2021
+ * SymComManager: Communication class
+ */
+
+class SymComManager(private var communicationEventListener: CommunicationEventListener? = null) {
     fun sendRequest(url: String, request: ByteArray, content_type: String = "text/plain", compressed: Boolean = false) {
             thread {
                 val connection = URL(url).openConnection() as HttpURLConnection
@@ -27,12 +33,11 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
                 connection.doOutput = true
 
                 try {
-                    val os: OutputStream
                     // Configure in case it must be compressed or not
-                    if (compressed) {
-                        os = DeflaterOutputStream(connection.outputStream, Deflater(9, true))
+                    val os: OutputStream = if (compressed) {
+                        DeflaterOutputStream(connection.outputStream, Deflater(9, true))
                     } else {
-                        os = connection.outputStream
+                        connection.outputStream
                     }
                     os.write(request)
                     os.close()
@@ -42,13 +47,14 @@ class SymComManager(var communicationEventListener: CommunicationEventListener? 
 
                 try {
                     val br = BufferedReader(
-                        // Check if the datas have been compressed or not
+                        // Check if the data have been compressed or not
                         if (connection.headerFields["X-Content-Encoding"]?.isEmpty() == false) {
                             InputStreamReader(InflaterInputStream(connection.inputStream, Inflater(true)))
                         } else {
                             InputStreamReader(connection.inputStream)
                         }
                     )
+                    // read answer as string
                     val response: String = br.readText()
 
                     // Send the response in the main thread
