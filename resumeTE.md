@@ -1,28 +1,24 @@
 # Résumé SYM
 
-Défi : Connections peu fiable, autonomies, interface restreintes, environnement local variable, appareils peuvent être perdu, sécurité hasardeuse, différents usage...
+**Défi** : Connections peu fiable, autonomies, interface restreintes, environnement local variable, appareils peuvent être perdu, sécurité hasardeuse, différents usage...
 
-Portabilité: Les périphériques doivent être portables et permettre de se déplacer facilement
+**Portabilité:** Les périphériques doivent être portables et permettre de se déplacer facilement
 
-Connectivité: Possibilité de rester connecté en permanence, sans être affecté par le déplacement
+**Connectivité:** Possibilité de rester connecté en permanence, sans être affecté par le déplacement
 
-Interactivité: Les périphériques et utilisateurs appartenant à un système informatique mobile sont interconnectés dans le but de pouvoir collaborer 
+**Interactivité:** Les périphériques et utilisateurs appartenant à un système informatique mobile sont interconnectés dans le but de pouvoir collaborer 
 
-Individualité: adaptation de la technologie aux besoins personnels 
+**Individualité:** adaptation de la technologie aux besoins personnels 
 
-### IOS
+### OS
 
-OS dérivé de MacOS, basé sur un noyau hybride XNU (Unix) **Environnement de développement** : XCode, (un IDE, un LLVM Toolchain (Outil de compilation) et un simulateur). Il existe des alternative, mais la compilation sera effectuée par XCode, et donc sur Mac. License payant pour développement et distribution.
-
-### Autre OS
-
-Windows Phone : dead depuis fin 2019 FireFox OS : 0,1% des téléphone en 2014, utilisé sur TV (Panasonic), dernière version stable 2015. Librem: Orienté matériel. Hardware + software 100% opensource. Librem5 basé sur PureOS
+**iOS** dérivé de MacOS, basé sur un noyau hybride XNU (Unix) **Environnement de développement** : XCode, (un IDE, un LLVM Toolchain (Outil de compilation) et un simulateur). Il existe des alternative, mais la compilation sera effectuée par XCode, et donc sur Mac. License payant pour développement et distribution.**Windows Phone :** dead depuis fin 2019 **FireFox OS** : 0,1% des téléphone en 2014, utilisé sur TV (Panasonic), dernière version stable 2015. **Librem:** Orienté matériel. Hardware + software 100% opensource. Librem5 basé sur PureOS
 
 ### Android
 
 Noyau Linux avec machine virtuelle dédiée (Dalvik et ensuite ART), pour isoler dans une sandbox.
 
-Propriété : Multi-tâche (de base), open-source, et donc permet des surcouche des constructeur.
+**Propriété :** Multi-tâche (de base), open-source, et donc permet des surcouche des constructeur.
 
 Multiple constructeurs mobile -> Utilisation une machine virtuelle dédiée,
 
@@ -54,9 +50,8 @@ Explicite : Permet de démarrer une Activité définie, quand on a un vision cla
 Intent(applicationContext,DetailActivity::class.java)
 startActivity(intent) 
 // shared content
-val intent = Intent(this, SecondActivity:: class.java).apply{
-putExtra(“key”,”New Value”)
-}
+val intent = Intent(this, SecondActivity:: class.java).apply {
+putExtra(“key”,”New Value”) }
 startActivity(intent)
 ```
 
@@ -100,13 +95,9 @@ Pour appliquer un layout, il faut `setContentView(R.layout.nomdufichiersansxml)`
 
 Ensuite, on peut mettre en place des listener sur les objet linké pour traiter les interractions.
 
-### Android JetPack
+**Android JetPack **Couvre les bibliothèques qui permettent aux utilisateurs d'interagir avec l'application via l'interface utilisateur
 
-Couvre les bibliothèques qui permettent aux utilisateurs d'interagir avec l'application via l'interface utilisateur
-
-### Programmer en android
-
-Grand principe mobilité : Ce qui n'est pas une interaction direct et immédiate doit être délégué à un autre thread.
+**Programmer en android** Grand principe mobilité : Ce qui n'est pas une interaction direct et immédiate doit être délégué à un autre thread.
 
 ### Application native
 
@@ -146,18 +137,9 @@ C : Capacité d'un canal 	W : largeur de bande S/N : cher S : valeur du signal (
 
 **modulation** : On peut transposer dans une modulation un signal à transmettre sur une onde qui va voyager sur trois type de modulation : L'amplitude(radio AM, message multiplié par la porteuse), la fréquence(raido FM, on varie la fréquence, on baisse si 0, et accélère si 1) et la phase (moins sensible au bruit, décalage de la porteuse si c'est des 0 ou des 1). 
 
-#### Augmentation
+**Augmentation** Plus on augmente la fréquence, plus on on peut transmettre, mais l'affaiblissement augmente au carré (courte portée) **2** Utiliser moins de largeur de bande, ex : si on a de la voix, on connait la largeur de bande **3** Essayer d'améliorer le rapport dignal/bruit (pas très maitrisable ou pas légal) **4** Utiliser des meilleurs techniques comme la 3g, 4g ...
 
-- Plus on augmente la fréquence, plus on on peut transmettre, mais l'affaiblissement augmente au carré (courte portée)
-
-- Utiliser moins de largeur de bande, ex : si on a de la voix, on connait la largeur de bande
-
-- Essayer d'améliorer le rapport dignal/bruit (pas très maitrisable ou pas légal)
-- Utiliser des meilleurs techniques comme la 3g, 4g ...
-
-##### Problème
-
-- Batterie, polution du milieu air, structure du réseau... (nb max d'utilisateur, augmenter le signal tue des réseaux plus lointain)
+**Problème** Batterie, polution du milieu air, structure du réseau... (nb max d'utilisateur, augmenter le signal tue des réseaux plus lointain)
 
 #### Réseau cellulaire  
 
@@ -193,7 +175,50 @@ Containtes : Autre onde payant à ne pas dérange, débit à satisfaire, limiter
 
 **Alternative à IP** TCP/IP slow start, donc on a des latence. SMS était ok avant (sur 3g et avant). 
 
-**Applicatif** 
+**Applicatif** systématiquement HTTP. SI app web, transmission présentation. Sinon, client riche
+
+### Spectre
+
+<img src="figures/image-20211116135441600.png" alt="image-20211116135441600" style="zoom:50%;" />
+
+**Electrosmog** Polution électromagnétique. Effet : chauffe les gens.  
+
+**DAS** Débit d'absorption spécifique, doit pas dépasser 2 W/Kg. 
 
 ## Communication internet
 
+Pour communiquer entre les thread, il nous faut un modèle asyncrone. Depuis le thread principal (UI-Thread), et y lance le thread voulu, et on synchronise ensuite sur le thread principal quand on a la réponse. Pour faire ça, on utilise les `EventListener`, en mode observateur. En pratique, on peut créer une liste de `CommunicationEventListener` . On peut implémenter ces`listener` sur une activité.
+
+**Problèmes** On doit pouvoir recevoir la réponse dans le thread principal. Howto: class `Handler` (ce gestionnaire permet d'envoyer et de traiter des `Message`objets exécutables associés à un thread `MessageQueue`) Moyen (1) programmer des messages et des exécutables à exécuter à un moment donné dans le futur (attention memory leaks, utiliser `WeakReference`) ; et (2) pour mettre en file d'attente une action à effectuer sur un contexte différent du vôtre.
+
+**Notification** Si on ferme l'utilisation, on peut interagir avec l'utilisateur sans `Activity`. Quand on clique sur une notification, on démarre une `Intent`. En général, on a une pile d'activité pour que l'utilisateur ait un état cohérent lorsqu'il clique dessus, afin de simuler ce qui devrait ce passer pour aller dessus. Si elle existe déjà, on va simplement aller dessus. Les notifications ont un ID, pour les mettre à jour. Il est possible de mettre plusieurs Intent sur une Notification (Ex, ouvrir What's app, ou répondre).
+
+**Sérialisation** On veut des objets complet, pour les sérialiser et déserialiser. On utilise en HTTP pour envoyer en clair du XML(verbeux, lisible, un peu auto-documenté et peut être validé(XSchema ou DTD)) ou du JSON (Compact, concis). Problème, pas optimisé (chiffre ou bool en String). On peut donc utiliser ProtoCol Buffers pour envoyer en en `ByteArray`. Existe pour PHP, Swift, Scala, etc... Aucun champ n'est obligatoire depuis la version 3. Utile pour chiffre et bool principalement. 
+
+**Serialisation XML** Outils bien des fois, ou pas. Peut être complexe, comme SAX(event). Bien pour XPath ou XSL. Xstream déconseillé, car si il y a des changement de nom de variable ça suit pas.
+
+**Serialisation JSON** Gson(Google), mais peut ne pas être adaptée, car aucun contrôle de cohérence, et type problématique(date). des champs manquant ou non renseigné ne seront pas traité. Si on a du JS, très pratique car on peut travailler avec ça comme un objet.
+
+**Introspection en java** : On prend un Objet de type inconnu, et on regarde tout ce qui la constitue. On charge dynamiquement avec `Class.forName("org.wikibooks.fr.NomdeLaClasse")` ... Pas besoin du coup de compiler la classe.
+
+**Réflexion en java** On prend un Objet de type inconnu, et on modifie la structure
+
+**Services web** Google a une approche REST, alors que les autre plus RPC / SOAP (lourd, intéressent pour des approches contrôlée) **XML-RPC** RPC : Remote Procedure Call. Format XML spécifique, pas ouf, car encore plus verbeux que XML, donc peut utiliser comme tel, mais plus utilisé pour des question/réponse facile. JSON-RPC fait la même. **SOAP** Plus de contrainte, beaucoup plus robuste (Utilisation de XMLSchema). Utilise **WSDL** (Web Service Description Language) permet de gérer du code client et/ou serveur. Standarisé. Pas assez mature sur mobile. Très lourd et très verbeux, mais strong. **RESTful** Sans état, mise en cache, chaque ressource a une URI, séparation client/serveur. Souvent utilisé pour des ressource dans une DB. **GraphQL** langage de requête alternatif au API REST, qui permet de préciser le type de retour. **under-fetching** : pas assez d'infos **over-fetching** : bien vu en Mobile, tout d'un coup. Exemple `{ hero { name } }` retourne `{ "data": { "hero": { "name": "R2-D2" } }}` possiblité de mettre de vraiment spécifier ce qu'on a besoin.
+
+**Objet volumineux** Attention aux objet trop gros, cas si la co quitte, ça recommence, donc on essaie de diminuer le payload ou partitionner les donnée. 
+
+**Compression** Avec HTTP (fait pas partie du protocole), on peut compresser le contenu à l'envoi. Il faut que le serveur et le client compresse et décompresse. Seulement utile pour du texte.
+
+**Sécurité **Au moins SSL, avec une vérification du certificat côté client, on doit rajouter un échange de token ou l'utilisation d'une clé privée. 
+
+### Serveur à client
+
+**Problématique** Ip inconnue, l'IP change tout le temps, firewall, NAT
+
+**Solution : Connection active** Implique des technique de l'Active Poll pour conserver au mieux la connexion. Utilisé par les jeu vidéo. Implémentation: Socket TCP/IP, Websockets...
+
+**Solution : Active Poll** Lance périodiquement une requête. SI il y a du contenu, on reçoit une réponse. Intéreressant si pas trop souvent. Pour la batterie, il existe des norme des politiques strictes. Possibilité de faire des requête que pendant un temps défini par l'OS. (Doze) Avec `App Standby Buckets `, les app sont classifié par leur temps d'utilisation `Active`, `Working set bocket`, `Frequent Bucket `... On peut programmer des exécution de Thread avec `ExecutorService`en Java, et Android spécifie `AlarmMangager` et permet d'emettre des Intent. `JobScheduler` plus poussé, plus configurable, moins de bug. v >= 21. Android Jetpack propose `WorkManager` est centralise toute ces possibilités dans une API.
+
+**Solution : Lazy Poll** Quand le client envoie des donnée, le serveur profite de la réponse pour envoyer ce qu'il doit envoyer
+
+**Solution : Poll on request** On envoie via le réseau téléphone l'information. Opérateur doit être ok avec ça. Google propose `cloud messaging`. pas sécurisé, donc qu'une Intent est envoyé. Il faut les Google Play Services.
