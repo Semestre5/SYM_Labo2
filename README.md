@@ -53,7 +53,7 @@ Ce qui serait intéressant du côté de l'utilisateur est de prévoir éventuell
 
 > Si une authentification par le serveur est requise, peut-on utiliser un protocole asynchrone ? Quelles seraient les restrictions ? Peut-on utiliser une transmission différée ?
 
-Oui, c'est faisable d'utiliser un protocole asynchrone en théorie, mais en pratique cela pourrait avoir des conséquences sur l'expérience de l'utilisateur. Etant donné que si une authentification est requise c'est pour accéder à du contenu accessible seulement à certaines personnes, si on attend pas la réponse du serveur il pourrait y avoir des informations manquantes, normalement disponibles à l'utilisateur.
+Oui, c'est faisable d'utiliser un protocole asynchrone en théorie, mais en pratique cela pourrait avoir des conséquences sur l'expérience de l'utilisateur. Etant donné que si une authentification est requise c'est pour accéder à du contenu accessible seulement à certaines personnes, si on attend pas la réponse du serveur il pourrait y avoir des informations erronées, puisque certaines informations pourraient ne pas être affichées ou l'inverse, qui s'affichent alors qu'elles ne devraient pas. Par exemple un site de vente, si un administarteur supprime un article, certains clients pourraient toujours avoir accès à celui-ci alors qu'il a été supprimé.
 
 Concernant la transmission différée, cela va un peu dans le même sens de la gêne envers les utilisateurs. Mais aussi en terme de sécurité, puisque certaines informations sensibles devraient être stockées avant l'envoi au serveur.
 
