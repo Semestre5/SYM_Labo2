@@ -14,6 +14,8 @@ Dans un premier temps nous avons du définir plusieurs activités, appelée dans
 - **CompressActivity**: Partie 3.4, GraphQL FormatJSON
 - **CompressActivity**: Partie 3.5, transmission compressée
 
+Les activités ``AsynchronActivity`` et ``CompressActivity`` ont toutes 2 un toast qui s'affiche avec le temps que l'opération a pris (traitement -> envoie -> réception -> traitement) à chaque requête. La classe SymComManager contient des variables contenant des chaînes de caractères de différentes tailles à tester. Ceci était nécessaire pour les réponses aux questions.
+
 ### 3.1 Service de transmission asynchrone
 
 L'activité ``AsynchronActivity``, contient principalement la définition de ``onCreate``. Une fonction de création de l'activité, elle définit un ``SymComManager`` pour gérer l'envoie.
@@ -47,7 +49,7 @@ Dans le cas où le serveur n'est pas joignable le, une exception sera lancée. C
 
 Ce qui serait intéressant du côté de l'utilisateur est de prévoir éventuellement un pop-up ou un toast qui s'afficherait lorsque l'exception est lancée indiquant que le serveur est inatteignable. Afin de diversifier le message d'erreur, nous pouvons aussi envisager que SymComManager vérifie que le téléphone est connecté à internet pour transmettre un message d'erreur plus précis plutôt que de lui indiquer seulement que le serveur est injoignable
 
-### 4.2 Authentification
+### 4.2 Authentification [todo]
 
 > Si une authentification par le serveur est requise, peut-on utiliser un protocole asynchrone ? Quelles seraient les restrictions ? Peut-on utiliser une transmission différée ?
 
@@ -84,7 +86,7 @@ Une méthode pour régler les désavantages des 2 méthodes mentionnées est de 
 
 > a. Quel inconvénient y a-t-il à utiliser une infrastructure de type REST/JSON n'offrant aucun service de validation (DTD, XML-schéma, WSDL) par rapport à une infrastructure comme SOAP offrant ces possibilités ? Est-ce qu’il y a en revanche des avantages que vous pouvez citer ?
 
-L'avantage de REST/JSON est que c'est légèrement moins lourd que le XML et permet une sérialisation et désérialisation simplifiée. XML a l'avantage d'effectuer une vérification
+L'infrastructure REST/JSON ne propose pas de validation. De ce fait nous devons contrôler la validité nous même ce qui peut rendre le processus un peu fastidieux. Toutefois si la validation n'est pas un problème, JSON est idéal. De plus le contenu généré est plus lisible et un petit peu moins lourd que le XML.
 
 > b. Par rapport à l’API GraphQL mise à disposition pour ce laboratoire. Avez-vous constaté des points qui pourraient être améliorés pour une utilisation mobile ? Veuillez en discuter, vous pouvez élargir votre réflexion à une problématique plus large que la manipulation effectuée.
 
@@ -93,3 +95,19 @@ Les requêtes larges utilise beaucoup de données. Il serait intéressant de les
 ### 4.6 Transmission compressée
 
 > Quel gain de compression (en volume et en temps) peut-on constater en moyenne sur des fichiers texte (xml et json sont aussi du texte) en utilisant de la compression du point 3.5 ? Vous comparerez plusieurs tailles et types de contenu, vous pouvez vous aider des valeurs «Received Size» (taille en bytes du contenu transféré) et «Payload Size» (taille en bytes du contenu après décompression) indiquées dans l’interface de logs du serveur utilisé pour les manipulations de ce laboratoire.
+
+![image-20211121182140880](README.assets/image-20211121182140880.png)
+
+Nous avons décidé de comparer 2 types de contenus:
+
+- Soit une chaîne composée exclusivement de "a"
+- Soit une chaîne générée aléatoirement.
+
+Les résultats sans compression ont été regroupé pour les 2 cas puisque nous obtenions des résultats similaires.
+
+Les conclusions que nous pouvons en tirer sont les suivantes:
+
+- La compression pour les petits payload n'est pas intéressante puisqu'elle fait perdre du temps inutilement (presque 2 fois plus long pour les chaines de taille 10 avec la compression)
+- La compression va allonger la chaîne si celle-ci n'est pas assez longue et qu'elle est aléatoire (cas de la chaîne sans répétitions de taille 10 et 100)
+- Sur les textes à répétition, la compression est très rentable en terme de gain en taille pour les grands textes. Il est toutefois important de rappeler que la compression a un coup temporel, ce qui ne la rend rentable pour les petits textes.
+- Les chaines aléatoires sont complexes à compresser avec un gain de taille qui n'excède pas les 25%. Le coût temporel est quand à lui titanesque (23 secondes pour 100000 caractères.)
