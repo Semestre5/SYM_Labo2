@@ -1,6 +1,8 @@
-# SYM_Labo2
+**Auteurs:** Robin GAUDIN, Lev POZNIAKOFF, Lev POZNIAKOFF
 
+**Date:** 21.11.2021
 
+# SYM: Labo 2, Protocoles applicatifs
 
 ## 3. Manipulation
 
@@ -39,23 +41,26 @@ Dans le SymComManager, on ajoute les en-têtes X-Network et X-Content-Encoding e
 ## 4. Questions
 
 ### 4.1 Traitement des erreurs
-> Les classes et interfaces SymComManager et CommunicationEventListener, utilisées au point 3.1,
-restent très (et certainement trop) simples pour être utilisables dans une vraie application : que se
-passe-t-il si le serveur n’est pas joignable dans l’immédiat ou s’il retourne un code HTTP d’erreur ?
-Veuillez proposer une nouvelle version, mieux adaptée, de ces deux classes / interfaces pour vous aider
-à illustrer votre réponse.
+> Les classes et interfaces SymComManager et CommunicationEventListener, utilisées au point 3.1, restent très (et certainement trop) simples pour être utilisables dans une vraie application : que se passe-t-il si le serveur n’est pas joignable dans l’immédiat ou s’il retourne un code HTTP d’erreur ? Veuillez proposer une nouvelle version, mieux adaptée, de ces deux classes / interfaces pour vous aider à illustrer votre réponse.
+
+Dans le cas où le serveur n'est pas joignable le, une exception sera lancée. Celle-ci sera catchée et la stack trace de l'exception sera imprimée dans les logs. Pour l'utilisateur, aucun message ou indication de l'erreur n'apparaîtra puisque la seule trace se trouvera dans les logs, et indirectement, l'absence de connexion sera indiqué l'abscense de réponse du serveur. 
+
+Ce qui serait intéressant du côté de l'utilisateur est de prévoir éventuellement un pop-up ou un toast qui s'afficherait lorsque l'exception est lancée indiquant que le serveur est inatteignable. Afin de diversifier le message d'erreur, nous pouvons aussi envisager que SymComManager vérifie que le téléphone est connecté à internet pour transmettre un message d'erreur plus précis plutôt que de lui indiquer seulement que le serveur est injoignable
 
 ### 4.2 Authentification
 
 > Si une authentification par le serveur est requise, peut-on utiliser un protocole asynchrone ? Quelles seraient les restrictions ? Peut-on utiliser une transmission différée ?
 
+
+
 ### 4.3 Threads concurrents
 
-> Lors de l'utilisation de protocoles asynchrones, c'est généralement deux threads différents qui se
-répartissent les différentes étapes (préparation, envoi, réception et traitement des données) de la
-communication. Quels problèmes cela peut-il poser ?
+> Lors de l'utilisation de protocoles asynchrones, c'est généralement deux threads différents qui se répartissent les différentes étapes (préparation, envoi, réception et traitement des données) de la communication. Quels problèmes cela peut-il poser ?
 
+- Nous pouvons avoir un problème lié à la concurrence dans le cas ou les 2 threads partagent la même ressources. Il faudrait considérer la mise en places de verrous afin de protéger ces dites ressources. 
+- L'ordre d'exécution peut également être problématique dans la mesure où l'ordonnanceur peut exécuter le thread de réception avant le thread d'envoi. Une synchronisation doit donc être faite entre ces 2 threads
 
+- Nous n'avons pas de communication entre le thread d'envoi (``sendRequest``) et le thread de réception (``HandlerReponse``). Il faudrait les lier éventuellement avec un ID
 
 ### 4.4 Ecriture différée
 
