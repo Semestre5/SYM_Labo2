@@ -66,15 +66,29 @@ Ce qui serait intéressant du côté de l'utilisateur est de prévoir éventuell
 
 > Lorsque l'on implémente l'écriture différée, il arrive que l'on ait soudainement plusieurs transmissions en attente qui deviennent possibles simultanément. Comment implémenter proprement cette situation ? Voici deux possibilités :
 >
-> > Effectuer une connexion par transmission différée 
-> 
-> > Multiplexer toutes les connexions vers un même serveur en une seule connexion de transport. Dans ce dernier cas, comment implémenter le protocole applicatif, quels avantages peut-on espérer de ce multiplexage, et surtout, comment doit-on planifier les réponses du serveur lorsque ces dernières s'avèrent nécessaires ?
+
+> Effectuer une connexion par transmission différée 
+
+L'utilisation d'une connexion par transmission différée peut être indiqué dans le cadre de l'envoi de fichier volumineux ou si nous somme face à une connexion instable. Les problèmes liés à cette méthode sont les suivants:
+
+-  Cette méthode est coûteuse en ressource
+- L'ordre d'envoie des données n'est pas assuré.
+
+> Multiplexer toutes les connexions vers un même serveur en une seule connexion de transport. Dans ce dernier cas, comment implémenter le protocole applicatif, quels avantages peut-on espérer de ce multiplexage, et surtout, comment doit-on planifier les réponses du serveur lorsque ces dernières s'avèrent nécessaires ?
+
+Le multiplexage permet de traiter plus de requête que la méthode précédente, mais aussi, facilite l'utilisation de même ressources par 2 activités différentes. Toutefois, cette méthode comporte le désavantage que si l'ensemble des requêtes est trop important, elle ne pourront pas être envoyée en une seule fois. Ce problème va s'aggraver avec le temps.
+
+Une méthode pour régler les désavantages des 2 méthodes mentionnées est de les combiner. Ainsi nous pourrions réunir les requêtes en blocs que nous multiplexerions 
 
 ### 4.5 Transmission d’objets
 
 > a. Quel inconvénient y a-t-il à utiliser une infrastructure de type REST/JSON n'offrant aucun service de validation (DTD, XML-schéma, WSDL) par rapport à une infrastructure comme SOAP offrant ces possibilités ? Est-ce qu’il y a en revanche des avantages que vous pouvez citer ?
->
+
+L'avantage de REST/JSON est que c'est légèrement moins lourd que le XML et permet une sérialisation et désérialisation simplifiée. XML a l'avantage d'effectuer une vérification
+
 > b. Par rapport à l’API GraphQL mise à disposition pour ce laboratoire. Avez-vous constaté des points qui pourraient être améliorés pour une utilisation mobile ? Veuillez en discuter, vous pouvez élargir votre réflexion à une problématique plus large que la manipulation effectuée.
+
+Les requêtes larges utilise beaucoup de données. Il serait intéressant de les compresser. Conserver les réponses en cache avec une vérification que la base de données n'a pas été modifiée peut également être une option.
 
 ### 4.6 Transmission compressée
 
