@@ -1,10 +1,26 @@
 # SYM_Labo2
 
+
+
 ## 3. Manipulation
+
+Dans un premier temps nous avons du définir plusieurs activités, appelée dans la MainActivity via un bouton. Elles sont défini dans ``ch.heigvd.sym.myapplication.activities`` et sont réparties ainsi:
+
+- **AsynchronActivity**: Partie 3.1, transmission asynchrone
+- **DeferredActivity**: Partie 3.2, transmission différée
+- **SerializationActivity**: Partie 3.3, transmission d'objet (JSON, XML, ProtoBuf)
+- **CompressActivity**: Partie 3.4, GraphQL FormatJSON
+- **CompressActivity**: Partie 3.5, transmission compressée
 
 ### 3.1 Service de transmission asynchrone
 
+L'activité ``AsynchronActivity``, contient principalement la définition de ``onCreate``. Une fonction de création de l'activité, elle définit un ``SymComManager`` pour gérer l'envoie.
+
+``SymComManager`` va quant à elle définir une fonction ``sendRequest`` qui définit un post dans lequel la communication avec le serveur est effectué.
+
 ### 3.2 Transmission différée
+
+L'activité ``DeferredActivity`` défini principalement la fonction ``onCreate``. Celle-ci va définir le champ textuel à remplir pour le message, ainsi que le bouton pour envoyer. Celui-ci va ajouter le contenu du champ textuel à une queue pour l'envoie différé. Un thread est ensuite défini afin d'envoyer périodiquement les messages de la queue au serveur à travers une boucle. La queue va donc se remplir dans intervalle ``Utils.DEFERRED_TIMING``. Une fois se temps dépassé, la queue est intégralement envoyée via le symComManager
 
 ### 3.3 Transmission d’objets
 
