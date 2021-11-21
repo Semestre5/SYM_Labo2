@@ -24,9 +24,7 @@ L'activité ``DeferredActivity`` défini principalement la fonction ``onCreate``
 
 ### 3.3 Transmission d’objets
 
-#### 3.3.1 Format JSON
-#### 3.3.2 Format XML
-#### 3.3.3 Protocol Buffers
+L'activité ``SerializationActivity``défini les champs nécessaires à cette partie. La fonction ``onCreate`` va définir 4 champs textuels (nom, prénom, 2e prénom(s), numéro de téléphone) ainsi que 2 lignes de checkbox avec une sélection unique, une pour la catégorie de numéro de téléphone et une pour le format de sérialisation. La définition du bouton d'envoi va prendre en compte le protocole de sérialisation utilisé pour le transmettre au ``SymComManager`` et l'envoyer au serveur dans le bon format.
 
 ### 3.4 GraphQL – Format JSON
 
