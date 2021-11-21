@@ -1,4 +1,4 @@
-**Auteurs:** Robin GAUDIN, Lev POZNIAKOFF, Lev POZNIAKOFF
+**Auteurs:** Robin GAUDIN, Lev POZNIAKOFF, Axel VALLON
 
 **Date:** 21.11.2021
 
@@ -6,7 +6,7 @@
 
 ## 3. Manipulation
 
-Dans un premier temps nous avons du définir plusieurs activités, appelée dans la MainActivity via un bouton. Elles sont défini dans ``ch.heigvd.sym.myapplication.activities`` et sont réparties ainsi:
+Dans un premier temps nous avons du définir plusieurs activités, appelée dans la MainActivity via un bouton. Elles sont définies dans ``ch.heigvd.sym.myapplication.activities`` et sont réparties ainsi:
 
 - **AsynchronActivity**: Partie 3.1, transmission asynchrone
 - **DeferredActivity**: Partie 3.2, transmission différée
@@ -20,11 +20,11 @@ Les activités ``AsynchronActivity`` et ``CompressActivity`` ont toutes 2 un toa
 
 L'activité ``AsynchronActivity``, contient principalement la définition de ``onCreate``. Une fonction de création de l'activité, elle définit un ``SymComManager`` pour gérer l'envoie.
 
-``SymComManager`` va quant à elle définir une fonction ``sendRequest`` qui définit un post dans lequel la communication avec le serveur est effectué.
+``SymComManager`` va quant à elle définir une fonction ``sendRequest`` qui définit un post dans lequel la communication avec le serveur est effectuée.
 
 ### 3.2 Transmission différée
 
-L'activité ``DeferredActivity`` défini principalement la fonction ``onCreate``. Celle-ci va définir le champ textuel à remplir pour le message, ainsi que le bouton pour envoyer. Celui-ci va ajouter le contenu du champ textuel à une queue pour l'envoie différé. Un thread est ensuite défini afin d'envoyer périodiquement les messages de la queue au serveur à travers une boucle. La queue va donc se remplir dans intervalle ``Utils.DEFERRED_TIMING``. Une fois se temps dépassé, la queue est intégralement envoyée via le symComManager
+L'activité ``DeferredActivity`` défini principalement la fonction ``onCreate``. Celle-ci va définir le champ textuel à remplir pour le message, ainsi que le bouton pour envoyer. Celui-ci va ajouter le contenu du champ textuel à une queue pour l'envoi différé. Un thread est ensuite défini afin d'envoyer périodiquement les messages de la queue au serveur à travers une boucle. La queue va donc se remplir dans l'intervalle ``Utils.DEFERRED_TIMING``. Une fois ce temps dépassé, la queue est intégralement envoyée via le SymComManager.
 
 ### 3.3 Transmission d’objets
 
@@ -49,20 +49,22 @@ Dans le cas où le serveur n'est pas joignable le, une exception sera lancée. C
 
 Ce qui serait intéressant du côté de l'utilisateur est de prévoir éventuellement un pop-up ou un toast qui s'afficherait lorsque l'exception est lancée indiquant que le serveur est inatteignable. Afin de diversifier le message d'erreur, nous pouvons aussi envisager que SymComManager vérifie que le téléphone est connecté à internet pour transmettre un message d'erreur plus précis plutôt que de lui indiquer seulement que le serveur est injoignable
 
-### 4.2 Authentification [todo]
+### 4.2 Authentification
 
 > Si une authentification par le serveur est requise, peut-on utiliser un protocole asynchrone ? Quelles seraient les restrictions ? Peut-on utiliser une transmission différée ?
 
+Oui, c'est faisable d'utiliser un protocole asynchrone en théorie, mais en pratique cela pourrait avoir des conséquences sur l'expérience de l'utilisateur. Etant donné que si une authentification est requise c'est pour accéder à du contenu accessible seulement à certaines personnes, si on attend pas la réponse du serveur il pourrait y avoir des informations manquantes, normalement disponibles à l'utilisateur.
 
+Concernant la transmission différée, cela va un peu dans le même sens de la gêne envers les utilisateurs. Mais aussi en terme de sécurité, puisque certaines informations sensibles devraient être stockées avant l'envoi au serveur.
 
 ### 4.3 Threads concurrents
 
 > Lors de l'utilisation de protocoles asynchrones, c'est généralement deux threads différents qui se répartissent les différentes étapes (préparation, envoi, réception et traitement des données) de la communication. Quels problèmes cela peut-il poser ?
 
-- Nous pouvons avoir un problème lié à la concurrence dans le cas ou les 2 threads partagent la même ressources. Il faudrait considérer la mise en places de verrous afin de protéger ces dites ressources. 
-- L'ordre d'exécution peut également être problématique dans la mesure où l'ordonnanceur peut exécuter le thread de réception avant le thread d'envoi. Une synchronisation doit donc être faite entre ces 2 threads
+- Nous pouvons avoir un problème lié à la concurrence dans le cas ou les 2 threads partagent la même ressource. Il faudrait considérer la mise en place de verrous afin de protéger ces dites ressources. 
+- L'ordre d'exécution peut également être problématique dans la mesure où l'ordonnanceur peut exécuter le thread de réception avant le thread d'envoi. Une synchronisation doit donc être faite entre ces 2 threads.
 
-- Nous n'avons pas de communication entre le thread d'envoi (``sendRequest``) et le thread de réception (``HandlerReponse``). Il faudrait les lier éventuellement avec un ID
+- Nous n'avons pas de communication entre le thread d'envoi (``sendRequest``) et le thread de réception (``HandlerReponse``). Il faudrait les lier éventuellement avec un ID.
 
 ### 4.4 Ecriture différée
 
@@ -71,10 +73,10 @@ Ce qui serait intéressant du côté de l'utilisateur est de prévoir éventuell
 
 > Effectuer une connexion par transmission différée 
 
-L'utilisation d'une connexion par transmission différée peut être indiqué dans le cadre de l'envoi de fichier volumineux ou si nous somme face à une connexion instable. Les problèmes liés à cette méthode sont les suivants:
+L'utilisation d'une connexion par transmission différée peut être indiquée dans le cadre de l'envoi de fichiers volumineux ou si nous somme face à une connexion instable. Les problèmes liés à cette méthode sont les suivants:
 
 -  Cette méthode est coûteuse en ressource
-- L'ordre d'envoie des données n'est pas assuré.
+- L'ordre d'envoi des données n'est pas assuré.
 
 > Multiplexer toutes les connexions vers un même serveur en une seule connexion de transport. Dans ce dernier cas, comment implémenter le protocole applicatif, quels avantages peut-on espérer de ce multiplexage, et surtout, comment doit-on planifier les réponses du serveur lorsque ces dernières s'avèrent nécessaires ?
 
@@ -90,7 +92,7 @@ L'infrastructure REST/JSON ne propose pas de validation. De ce fait nous devons 
 
 > b. Par rapport à l’API GraphQL mise à disposition pour ce laboratoire. Avez-vous constaté des points qui pourraient être améliorés pour une utilisation mobile ? Veuillez en discuter, vous pouvez élargir votre réflexion à une problématique plus large que la manipulation effectuée.
 
-Les requêtes larges utilise beaucoup de données. Il serait intéressant de les compresser. Conserver les réponses en cache avec une vérification que la base de données n'a pas été modifiée peut également être une option.
+Les requêtes larges utilisent beaucoup de données. Il serait intéressant de les compresser. Conserver les réponses en cache avec une vérification que la base de données n'a pas été modifiée peut également être une option.
 
 ### 4.6 Transmission compressée
 
@@ -103,11 +105,11 @@ Nous avons décidé de comparer 2 types de contenus:
 - Soit une chaîne composée exclusivement de "a"
 - Soit une chaîne générée aléatoirement.
 
-Les résultats sans compression ont été regroupé pour les 2 cas puisque nous obtenions des résultats similaires.
+Les résultats sans compression ont été regroupés pour les 2 cas puisque nous obtenions des résultats similaires.
 
 Les conclusions que nous pouvons en tirer sont les suivantes:
 
-- La compression pour les petits payload n'est pas intéressante puisqu'elle fait perdre du temps inutilement (presque 2 fois plus long pour les chaines de taille 10 avec la compression)
+- La compression pour les petits payload n'est pas intéressante puisqu'elle fait perdre du temps inutilement (presque 2 fois plus long pour les chaìnes de taille 10 avec la compression)
 - La compression va allonger la chaîne si celle-ci n'est pas assez longue et qu'elle est aléatoire (cas de la chaîne sans répétitions de taille 10 et 100)
-- Sur les textes à répétition, la compression est très rentable en terme de gain en taille pour les grands textes. Il est toutefois important de rappeler que la compression a un coup temporel, ce qui ne la rend rentable pour les petits textes.
-- Les chaines aléatoires sont complexes à compresser avec un gain de taille qui n'excède pas les 25%. Le coût temporel est quand à lui titanesque (23 secondes pour 100000 caractères.)
+- Sur les textes à répétition, la compression est très rentable en terme de gain en taille pour les grands textes. Il est toutefois important de rappeler que la compression a un coup temporel, ce qui ne la rend pas rentable pour les petits textes.
+- Les chaînes aléatoires sont complexes à compresser avec un gain de taille qui n'excède pas les 25%. Le coût temporel est quand à lui titanesque (23 secondes pour 100000 caractères.)
